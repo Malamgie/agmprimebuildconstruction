@@ -1,0 +1,1644 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGM PrimeBuild Construction Ltd | Building Today • Shaping Tomorrow</title>
+  <meta name="description" content="AGM PrimeBuild Construction Ltd is a leading construction company delivering modern, durable and timeless structures for homes, businesses and communities." />
+  <meta property="og:title" content="AGM PrimeBuild Construction Ltd | Building Today • Shaping Tomorrow" />
+  <meta property="og:description" content="Premium construction, architecture, property development, renovation, and project management across Nigeria." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter for strong geometric architectural typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bgPrimary: '#05090D',
+              bgSecondary: '#080D13',
+              card: '#0E141B',
+              cardHover: '#131B24',
+              gold: '#F5BD41',
+              goldHover: '#FFD063',
+              silver: '#D8DCE2',
+              lightBg: '#F7F8FA',
+              textPrimary: '#F5F6F8',
+              textSecondary: '#A3ACB9',
+              textDark: '#0C1219',
+              textDarkMuted: '#4A5462'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', ' -apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+          },
+          maxWidth: {
+            'container': '1240px',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg-primary: #05090D;
+      --bg-secondary: #080D13;
+      --card-bg: #0E141B;
+      --gold-primary: #F5BD41;
+      --gold-highlight: #FFD875;
+      --text-white: #F7F8FA;
+      --text-secondary: #A3ACB9;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-card: rgba(255, 255, 255, 0.07);
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-white);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    /* Custom Hero Multi-layered Architectural Overlay matching reference screenshot */
+    .hero-left-vignette {
+      background: linear-gradient(
+        90deg,
+        #05090D 0%,
+        rgba(5, 9, 13, 0.96) 28%,
+        rgba(5, 9, 13, 0.72) 52%,
+        rgba(5, 9, 13, 0.22) 78%,
+        rgba(5, 9, 13, 0.08) 100%
+      );
+    }
+
+    @media (max-width: 1023px) {
+      .hero-left-vignette {
+        background: linear-gradient(
+          180deg,
+          rgba(5, 9, 13, 0.88) 0%,
+          rgba(5, 9, 13, 0.82) 55%,
+          rgba(5, 9, 13, 0.95) 100%
+        );
+      }
+    }
+
+    .hero-top-vignette {
+      background: linear-gradient(
+        180deg,
+        rgba(5, 9, 13, 0.78) 0%,
+        rgba(5, 9, 13, 0.32) 60%,
+        rgba(5, 9, 13, 0) 100%
+      );
+    }
+
+    .hero-bottom-vignette {
+      background: linear-gradient(
+        0deg,
+        #05090D 0%,
+        rgba(5, 9, 13, 0.88) 38%,
+        rgba(5, 9, 13, 0.42) 75%,
+        rgba(5, 9, 13, 0) 100%
+      );
+    }
+
+    /* Section 6 Impact Sunset Crane Overlay */
+    .impact-overlay {
+      background: linear-gradient(
+        90deg,
+        rgba(5, 9, 13, 0.92) 0%,
+        rgba(5, 9, 13, 0.76) 45%,
+        rgba(5, 9, 13, 0.84) 100%
+      );
+    }
+
+    /* Section 9 Final CTA Architectural Overlay */
+    .cta-overlay {
+      background: linear-gradient(
+        90deg,
+        rgba(5, 9, 13, 0.96) 0%,
+        rgba(5, 9, 13, 0.78) 45%,
+        rgba(5, 9, 13, 0.86) 100%
+      );
+    }
+
+    /* Hide scrollbar for clean carousel tracks */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Subtle gold glow for active nav indicator */
+    .nav-active-underline {
+      position: relative;
+    }
+    .nav-active-underline::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #F5BD41;
+      border-radius: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#05090D] text-[#F5F6F8] selection:bg-[#F5BD41] selection:text-[#05090D]">
+
+  <!-- =====================================================================
+       HERO & INTEGRATED NAVIGATION WRAPPER (SECTIONS 1 & 2)
+  ====================================================================== -->
+  <div id="home" class="relative w-full min-h-[710px] lg:min-h-[790px] xl:min-h-[830px] flex flex-col justify-between overflow-hidden bg-[#05090D]">
+    
+    <!-- Architectural Background Photograph -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
+        alt="Modern luxury residential architecture at dusk with warm interior lighting"
+        fetchpriority="high"
+        class="w-full h-full object-cover object-[68%_center] lg:object-[right_center] transform scale-[1.01]"
+        onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/080D13/F5BD41?text=AGM+PrimeBuild+Luxury+Architecture';"
+      />
+      <!-- Precision Overlays to keep left text crystal clear while showcasing right building -->
+      <div class="absolute inset-0 hero-left-vignette"></div>
+      <div class="absolute top-0 inset-x-0 h-32 hero-top-vignette"></div>
+      <div class="absolute bottom-0 inset-x-0 h-48 hero-bottom-vignette"></div>
+    </div>
+
+    <!-- ===================================================================
+         SECTION 1 — HEADER AND NAVIGATION
+    ==================================================================== -->
+    <header class="relative z-30 w-full pt-5 pb-3 lg:pt-7 lg:pb-4">
+      <div class="max-w-container mx-auto px-5 sm:px-8 lg:px-10">
+        <nav class="flex items-center justify-between" aria-label="Main Navigation">
+          
+          <!-- Left: Official AGM PrimeBuild Logo with Fallback Lockup -->
+          <a href="#home" class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F5BD41] rounded-lg">
+            <img
+              src="logo.webp"
+              alt="AGM PrimeBuild Construction Ltd Official Logo"
+              class="h-11 sm:h-12 w-auto object-contain"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <!-- Exact visual recreation of the AGM PrimeBuild crest & typography if logo.webp is not found locally -->
+            <div style="display: none;" class="items-center gap-2.5 select-none">
+              <div class="relative w-11 h-11 flex items-center justify-center">
+                <svg viewBox="0 0 64 64" class="w-11 h-11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Outer Gold Diamond/Roof Crest -->
+                  <path d="M32 4L58 26L48 56H16L6 26L32 4Z" stroke="#F5BD41" stroke-width="2.5" fill="#0B1118"/>
+                  <!-- Building Towers Inside Crest -->
+                  <path d="M22 24V46M28 16V46M35 19V46M41 26V46" stroke="#F5BD41" stroke-width="2"/>
+                  <!-- Metallic A G M Monogram -->
+                  <path d="M14 48L26 24L36 48H14Z" fill="#D8DCE2" stroke="#05090D" stroke-width="1"/>
+                  <path d="M20 42H48" stroke="#F5BD41" stroke-width="3"/>
+                </svg>
+              </div>
+              <div class="flex flex-col leading-none">
+                <span class="text-[#F5BD41] font-heading font-extrabold text-xl sm:text-2xl tracking-tight">AGM</span>
+                <span class="text-[#F7F8FA] font-heading font-bold text-[10px] sm:text-[11px] tracking-[0.16em] uppercase mt-0.5">PRIMEBUILD</span>
+                <span class="text-[#A3ACB9] font-sans font-medium text-[7px] tracking-[0.22em] uppercase mt-0.5">CONSTRUCTION LTD</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Center: Navigation Links (Desktop) -->
+          <ul class="hidden lg:flex items-center gap-8 xl:gap-9 text-[14px] font-medium">
+            <li>
+              <a href="#home" data-nav="home" class="nav-link text-white nav-active-underline transition-colors hover:text-[#F5BD41] py-1">Home</a>
+            </li>
+            <li>
+              <a href="#about" data-nav="about" class="nav-link text-[#D8DCE2] hover:text-white transition-colors py-1">About</a>
+            </li>
+            <li>
+              <a href="#services" data-nav="services" class="nav-link text-[#D8DCE2] hover:text-white transition-colors py-1">Services</a>
+            </li>
+            <li>
+              <a href="#projects" data-nav="projects" class="nav-link text-[#D8DCE2] hover:text-white transition-colors py-1">Projects</a>
+            </li>
+            <li>
+              <a href="#why-us" data-nav="why-us" class="nav-link text-[#D8DCE2] hover:text-white transition-colors py-1">Why Us</a>
+            </li>
+            <li>
+              <a href="#contact" data-nav="contact" class="nav-link text-[#D8DCE2] hover:text-white transition-colors py-1">Contact</a>
+            </li>
+          </ul>
+
+          <!-- Right: Prominent Gold "Get a Quote" CTA & Mobile Hamburger -->
+          <div class="flex items-center gap-3">
+            <button
+              type="button"
+              onclick="openQuoteModal('General Quote Request')"
+              class="inline-flex items-center gap-2 bg-[#F5BD41] hover:bg-[#FFD063] active:scale-[0.99] text-[#05090D] font-semibold text-[13px] sm:text-[14px] px-4 sm:px-5 py-2.5 rounded-full transition-all shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#F5BD41] focus-visible:ring-offset-[#05090D]"
+            >
+              <span>Get a Quote</span>
+              <svg class="w-3.5 h-3.5 stroke-[2.2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+              </svg>
+            </button>
+
+            <!-- Mobile Menu Trigger -->
+            <button
+              id="mobile-menu-btn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Toggle Navigation Menu"
+              class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-white/15 bg-[#0B1118]/80 text-white hover:border-[#F5BD41] hover:text-[#F5BD41] transition-colors focus:outline-none"
+            >
+              <svg id="menu-icon-open" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+              </svg>
+              <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </nav>
+
+        <!-- Accessible Mobile Navigation Drawer -->
+        <div
+          id="mobile-menu"
+          class="hidden lg:hidden mt-4 rounded-2xl bg-[#0B1118]/95 backdrop-blur-md border border-white/10 p-5 shadow-2xl"
+        >
+          <ul class="flex flex-col space-y-3 text-[15px] font-medium">
+            <li><a href="#home" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#F5BD41] bg-white/5">Home</a></li>
+            <li><a href="#about" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#D8DCE2] hover:text-white hover:bg-white/5">About</a></li>
+            <li><a href="#services" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#D8DCE2] hover:text-white hover:bg-white/5">Services</a></li>
+            <li><a href="#projects" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#D8DCE2] hover:text-white hover:bg-white/5">Projects</a></li>
+            <li><a href="#why-us" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#D8DCE2] hover:text-white hover:bg-white/5">Why Us</a></li>
+            <li><a href="#contact" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#D8DCE2] hover:text-white hover:bg-white/5">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===================================================================
+         SECTION 2 — HERO CONTENT & TRUST BAR
+    ==================================================================== -->
+    <div class="relative z-20 flex-1 flex items-center py-10 lg:py-14">
+      <div class="max-w-container mx-auto px-5 sm:px-8 lg:px-10 w-full">
+        <div class="max-w-[570px]">
+          
+          <!-- Small Gold Eyebrow -->
+          <div class="inline-flex items-center gap-2 text-[#F5BD41] text-[11px] sm:text-[12px] font-semibold tracking-[0.18em] uppercase mb-4">
+            <span>BUILDING TODAY</span>
+            <span class="text-[#F5BD41]/70">•</span>
+            <span>SHAPING TOMORROW</span>
+          </div>
+
+          <!-- Main Headline with Exact Line Hierarchy -->
+          <h1 class="font-heading font-bold text-[36px] sm:text-[46px] lg:text-[54px] xl:text-[56px] leading-[1.09] tracking-[-0.02em] text-white mb-5">
+            We Build More<br />
+            Than Structures,<br />
+            <span class="text-[#F5BD41]">We Build Dreams.</span>
+          </h1>
+
+          <!-- Supporting Paragraph -->
+          <p class="text-[#C7CDD6] text-[14.5px] sm:text-[15.5px] leading-[1.65] max-w-[490px] mb-8 font-normal">
+            AGM PrimeBuild Construction Ltd is a leading construction company delivering modern, durable and timeless structures for homes, businesses and communities.
+          </p>
+
+          <!-- Primary & Secondary CTAs -->
+          <div class="flex flex-wrap items-center gap-3.5 sm:gap-4">
+            <a
+              href="#services"
+              class="inline-flex items-center justify-center gap-2.5 bg-[#F5BD41] hover:bg-[#FFD063] text-[#05090D] font-semibold text-[14px] px-6 py-3.5 rounded-full transition-all shadow-md"
+            >
+              <span>Our Services</span>
+              <svg class="w-4 h-4 stroke-[2.2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+              </svg>
+            </a>
+
+            <a
+              href="#projects"
+              class="inline-flex items-center justify-center bg-[#0B1118]/55 hover:bg-white/10 text-white border border-white/25 hover:border-white/45 font-medium text-[14px] px-6 py-3.5 rounded-full transition-all backdrop-blur-[2px]"
+            >
+              <span>View Our Projects</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Hero Trust Indicators -->
+    <div class="relative z-20 w-full pb-8 lg:pb-11 pt-4">
+      <div class="max-w-container mx-auto px-5 sm:px-8 lg:px-10">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-5 gap-x-4 lg:max-w-[780px] pt-4 border-t border-white/10 lg:border-t-0">
+          
+          <!-- Indicator 1: Quality Construction -->
+          <div class="flex items-center gap-3 pr-2 md:border-r md:border-white/10">
+            <div class="flex-shrink-0 text-[#F5BD41]">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4" />
+              </svg>
+            </div>
+            <div class="text-[12.5px] sm:text-[13px] leading-[1.3] font-medium text-[#E5E8EC]">
+              Quality<br />Construction
+            </div>
+          </div>
+
+          <!-- Indicator 2: On-Time Delivery -->
+          <div class="flex items-center gap-3 md:pl-3 pr-2 md:border-r md:border-white/10">
+            <div class="flex-shrink-0 text-[#F5BD41]">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <circle cx="12" cy="12" r="9" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2" />
+              </svg>
+            </div>
+            <div class="text-[12.5px] sm:text-[13px] leading-[1.3] font-medium text-[#E5E8EC]">
+              On-Time<br />Delivery
+            </div>
+          </div>
+
+          <!-- Indicator 3: Experienced Team -->
+          <div class="flex items-center gap-3 md:pl-3 pr-2 md:border-r md:border-white/10">
+            <div class="flex-shrink-0 text-[#F5BD41]">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <div class="text-[12.5px] sm:text-[13px] leading-[1.3] font-medium text-[#E5E8EC]">
+              Experienced<br />Team
+            </div>
+          </div>
+
+          <!-- Indicator 4: Client Satisfaction -->
+          <div class="flex items-center gap-3 md:pl-3">
+            <div class="flex-shrink-0 text-[#F5BD41]">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66" />
+              </svg>
+            </div>
+            <div class="text-[12.5px] sm:text-[13px] leading-[1.3] font-medium text-[#E5E8EC]">
+              Client<br />Satisfaction
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SECTION 3 — OUR SERVICES
+  ====================================================================== -->
+  <section id="services" class="bg-[#05090D] py-16 lg:py-24 border-t border-white/[0.06]">
+    <div class="max-w-container mx-auto px-5 sm:px-8 lg:px-10">
+      
+      <!-- Section Heading Row -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 lg:mb-14">
+        <div>
+          <span class="block text-[#F5BD41] text-[11px] sm:text-[12px] font-semibold tracking-[0.16em] uppercase mb-2.5">
+            OUR SERVICES
+          </span>
+          <h2 class="font-heading font-bold text-[28px] sm:text-[34px] lg:text-[38px] leading-[1.18] text-white">
+            Comprehensive Construction<br class="hidden sm:inline" /> Solutions
+          </h2>
+        </div>
+        <p class="text-[#A3ACB9] text-[14px] sm:text-[14.5px] leading-[1.65] lg:max-w-[390px] lg:pb-1">
+          From residential homes to commercial complexes, we provide end-to-end construction services tailored to your vision and budget.
+        </p>
+      </div>
+
+      <!-- Four Equally Sized Service Cards in One Desktop Row -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+        
+        <!-- Card 1: Residential Construction -->
+        <article class="group bg-[#0C1117] hover:bg-[#101720] border border-white/[0.07] hover:border-[#F5BD41]/35 rounded-2xl p-6 lg:p-7 flex flex-col justify-between transition-all duration-200">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-[#131A23] border border-white/[0.06] flex items-center justify-center text-[#F5BD41] mb-6">
+              <!-- House Icon -->
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline stroke-linecap="round" stroke-linejoin="round" points="9 22 9 12 15 12 15 22" />
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-[18px] leading-[1.3] text-white mb-3">
+              Residential<br />Construction
+            </h3>
+            <p class="text-[#9BA5B4] text-[13.5px] leading-[1.6] mb-7">
+              Modern, comfortable and lasting homes for you and your family.
+            </p>
+          </div>
+          <button
+            type="button"
+            onclick="openServiceDetail('Residential Construction', 'We design and build bespoke modern residences, duplexes, and family estates across Nigeria using high-grade materials and climate-resilient engineering.')"
+            class="inline-flex items-center gap-2 text-[#F5BD41] group-hover:text-[#FFD063] text-[13px] font-semibold tracking-wide transition-colors w-fit"
+          >
+            <span>Learn More</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </button>
+        </article>
+
+        <!-- Card 2: Commercial Construction -->
+        <article class="group bg-[#0C1117] hover:bg-[#101720] border border-white/[0.07] hover:border-[#F5BD41]/35 rounded-2xl p-6 lg:p-7 flex flex-col justify-between transition-all duration-200">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-[#131A23] border border-white/[0.06] flex items-center justify-center text-[#F5BD41] mb-6">
+              <!-- Building Icon -->
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01" />
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-[18px] leading-[1.3] text-white mb-3">
+              Commercial<br />Construction
+            </h3>
+            <p class="text-[#9BA5B4] text-[13.5px] leading-[1.6] mb-7">
+              Office spaces, retail stores and business facilities that inspire growth.
+            </p>
+          </div>
+          <button
+            type="button"
+            onclick="openServiceDetail('Commercial Construction', 'From multi-story corporate headquarters in Abuja to high-footfall retail complexes, we deliver commercial landmarks engineered for efficiency and prestige.')"
+            class="inline-flex items-center gap-2 text-[#F5BD41] group-hover:text-[#FFD063] text-[13px] font-semibold tracking-wide transition-colors w-fit"
+          >
+            <span>Learn More</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </button>
+        </article>
+
+        <!-- Card 3: Renovation & Remodeling -->
+        <article class="group bg-[#0C1117] hover:bg-[#101720] border border-white/[0.07] hover:border-[#F5BD41]/35 rounded-2xl p-6 lg:p-7 flex flex-col justify-between transition-all duration-200">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-[#131A23] border border-white/[0.06] flex items-center justify-center text-[#F5BD41] mb-6">
+              <!-- Hard Hat Icon -->
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 15v-3a6 6 0 0 1 6-6h0" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 6h0a6 6 0 0 1 6 6v3" />
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-[18px] leading-[1.3] text-white mb-3">
+              Renovation &amp; Remodeling
+            </h3>
+            <p class="text-[#9BA5B4] text-[13.5px] leading-[1.6] mb-7">
+              Give your existing space a fresh, modern look with our expert touch.
+            </p>
+          </div>
+          <button
+            type="button"
+            onclick="openServiceDetail('Renovation & Remodeling', 'Complete structural upgrades, facade modernization, and luxury interior remodeling that transform dated properties into contemporary architectural showcases.')"
+            class="inline-flex items-center gap-2 text-[#F5BD41] group-hover:text-[#FFD063] text-[13px] font-semibold tracking-wide transition-colors w-fit"
+          >
+            <span>Learn More</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </button>
+        </article>
+
+        <!-- Card 4: Project Management -->
+        <article class="group bg-[#0C1117] hover:bg-[#101720] border border-white/[0.07] hover:border-[#F5BD41]/35 rounded-2xl p-6 lg:p-7 flex flex-col justify-between transition-all duration-200">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-[#131A23] border border-white/[0.06] flex items-center justify-center text-[#F5BD41] mb-6">
+              <!-- Blueprint / Project Planning Icon -->
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <rect x="3" y="4" width="18" height="16" rx="2" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h6M7 16h4" />
+                <circle cx="16.5" cy="14.5" r="2" />
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-[18px] leading-[1.3] text-white mb-3">
+              Project Management
+            </h3>
+            <p class="text-[#9BA5B4] text-[13.5px] leading-[1.6] mb-7">
+              We handle the process, so you can focus on your vision.
+            </p>
+          </div>
+          <button
+            type="button"
+            onclick="openServiceDetail('Project Management', 'End-to-end site supervision, cost control, procurement, quality assurance, and milestone scheduling delivered with full transparency.')"
+            class="inline-flex items-center gap-2 text-[#F5BD41] group-hover:text-[#FFD063] text-[13px] font-semibold tracking-wide transition-colors w-fit"
+          >
+            <span>Learn More</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </button>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SECTION 4 — ABOUT US (LIGHT SECTION)
+  ====================================================================== -->
+  <section id="about" class="bg-[#F7F8FA] text-[#0C1219] py-16 lg:py-24">
+    <div class="max-w-container mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        
+        <!-- Left Column: Engineer Composite Imagery + Inset Building + Dark Badge -->
+        <div class="lg:col-span-6 relative pb-8 sm:pb-12 lg:pb-10 pr-0 sm:pr-8">
+          
+          <!-- Main Engineer Reviewing Plans Photograph -->
+          <div class="relative rounded-2xl overflow-hidden shadow-lg w-[92%] sm:w-[86%] aspect-[4/3.6] bg-[#E2E6EC]">
+            <img
+              src="https://images.unsplash.com/photo-1541888946425-d81bb18086f6?auto=format&fit=crop&w=1000&q=80"
+              alt="AGM PrimeBuild construction engineer in safety vest and hard hat reviewing architectural blueprints on site"
+              loading="lazy"
+              class="w-full h-full object-cover object-center"
+              onerror="this.onerror=null;this.src='https://placehold.co/800x700/101820/F5BD41?text=Site+Engineer';"
+            />
+          </div>
+
+          <!-- Secondary Architectural Photograph Overlapping Lower-Right -->
+          <div class="absolute right-0 bottom-0 w-[50%] sm:w-[46%] aspect-[4/3.3] rounded-2xl overflow-hidden border-4 border-[#F7F8FA] shadow-xl bg-[#0B1118] z-10">
+            <img
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=700&q=80"
+              alt="Modern commercial glass office building completed by AGM PrimeBuild"
+              loading="lazy"
+              class="w-full h-full object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/500x400/0B1118/F5BD41?text=Commercial+Project';"
+            />
+          </div>
+
+          <!-- Compact Dark Trust Badge at Lower-Left -->
+          <div class="absolute left-0 bottom-2 sm:bottom-4 z-20 bg-[#0B1118] text-white rounded-xl px-4 sm:px-5 py-3.5 shadow-xl flex items-center gap-3.5 border border-white/10">
+            <div class="w-10 h-10 rounded-lg bg-[#F5BD41]/15 flex items-center justify-center text-[#F5BD41] flex-shrink-0">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <div>
+              <span class="block text-[#A3ACB9] text-[11px] leading-tight">Trusted by</span>
+              <span class="block font-heading font-bold text-[15px] sm:text-[16px] text-white leading-tight mt-0.5">100+ Clients</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: About Copy, 3 Gold Statistics, Dark Rounded CTA -->
+        <div class="lg:col-span-6 lg:pl-4">
+          <span class="block text-[#D89B1C] text-[11px] sm:text-[12px] font-bold tracking-[0.16em] uppercase mb-2.5">
+            ABOUT US
+          </span>
+          <h2 class="font-heading font-bold text-[28px] sm:text-[34px] lg:text-[38px] leading-[1.16] text-[#0C1219] mb-5">
+            Building With<br />
+            Excellence &amp; Integrity
+          </h2>
+          <p class="text-[#4A5462] text-[14.5px] sm:text-[15px] leading-[1.7] mb-8">
+            AGM PrimeBuild Construction Ltd is a forward-thinking construction company committed to delivering high-quality projects that stand the test of time. We combine innovation, expertise and a customer-first approach to bring your ideas to life.
+          </p>
+
+          <!-- Three Statistics Row with Vertical Separators -->
+          <div class="grid grid-cols-3 gap-4 sm:gap-6 py-4 mb-8 border-y border-black/[0.06] sm:border-y-0">
+            <div class="pr-3 border-r border-black/10">
+              <div class="font-heading font-extrabold text-[26px] sm:text-[32px] text-[#E5A823] leading-none mb-1.5">
+                5+
+              </div>
+              <div class="text-[#4A5462] text-[12px] sm:text-[13px] font-medium">
+                Years of Experience
+              </div>
+            </div>
+
+            <div class="px-2 sm:px-4 border-r border-black/10">
+              <div class="font-heading font-extrabold text-[26px] sm:text-[32px] text-[#E5A823] leading-none mb-1.5">
+                100+
+              </div>
+              <div class="text-[#4A5462] text-[12px] sm:text-[13px] font-medium">
+                Successful Projects
+              </div>
+            </div>
+
+            <div class="pl-2 sm:pl-4">
+              <div class="font-heading font-extrabold text-[26px] sm:text-[32px] text-[#E5A823] leading-none mb-1.5">
+                100%
+              </div>
+              <div class="text-[#4A5462] text-[12px] sm:text-[13px] font-medium">
+                Client Satisfaction
+              </div>
+            </div>
+          </div>
+
+          <!-- Dark Rounded CTA Button -->
+          <a
+            href="#why-us"
+            class="inline-flex items-center gap-2.5 bg-[#0B1118] hover:bg-[#18222F] text-white font-semibold text-[13.5px] sm:text-[14px] px-6 py-3.5 rounded-full transition-all shadow-sm"
+          >
+            <span>Learn More About Us</span>
+            <svg class="w-4 h-4 text-[#F5BD41]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SECTION 5 — FEATURED PROJECTS
+  ====================================================================== -->
+  <section id="projects" class="bg-[#05090D] py-16 lg:py-24">
+    <div class="max-w-container mx-auto px-5 sm:px-8 lg:px-10">
+      
+      <!-- Heading + Circular Previous/Next Controls -->
+      <div class="flex items-end justify-between gap-4 mb-10 lg:mb-12">
+        <div>
+          <span class="block text-[#F5BD41] text-[11px] sm:text-[12px] font-semibold tracking-[0.16em] uppercase mb-2">
+            FEATURED PROJECTS
+          </span>
+          <h2 class="font-heading font-bold text-[28px] sm:text-[34px] lg:text-[38px] leading-[1.18] text-white">
+            Our Recent Projects
+          </h2>
+        </div>
+
+        <!-- Subtle Circular Arrow Controls -->
+        <div class="flex items-center gap-2.5">
+          <button
+            type="button"
+            id="projects-prev"
+            aria-label="Previous Projects"
+            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/15 bg-[#0C1117] hover:border-[#F5BD41] text-[#A3ACB9] hover:text-[#F5BD41] flex items-center justify-center transition-colors focus:outline-none"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m15 18-6-6 6-6" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            id="projects-next"
+            aria-label="Next Projects"
+            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/15 bg-[#0C1117] hover:border-[#F5BD41] text-[#A3ACB9] hover:text-[#F5BD41] flex items-center justify-center transition-colors focus:outline-none"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Four Project Cards in a Single Desktop Row (Interactive Carousel on Mobile/Desktop) -->
+      <div
+        id="projects-track"
+        class="grid grid-flow-col auto-cols-[82%] sm:auto-cols-[47%] lg:grid-flow-row lg:grid-cols-4 gap-5 lg:gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth pb-2"
+      >
+        
+        <!-- Project 1: Residential House -->
+        <article class=" project-card snap-start group cursor-pointer" onclick="openProjectModal('Residential House', 'Bauchi, Nigeria', 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80', 'A bespoke 5-bedroom luxury contemporary residence featuring cantilevered balconies, floor-to-ceiling glazing, and integrated smart-home automation.')">
+          <div class="rounded-xl overflow-hidden aspect-[4/3] bg-[#0E141B] mb-3.5 border border-white/[0.07]">
+            <img
+              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80"
+              alt="Residential House in Bauchi, Nigeria"
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x450/0E141B/F5BD41?text=Residential+House';"
+            />
+          </div>
+          <h3 class="font-heading font-bold text-[15.5px] text-white group-hover:text-[#F5BD41] transition-colors mb-1">
+            Residential House
+          </h3>
+          <div class="flex items-center gap-1.5 text-[#9BA5B4] text-[12.5px]">
+            <svg class="w-3.5 h-3.5 text-[#F5BD41] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>Bauchi, Nigeria</span>
+          </div>
+        </article>
+
+        <!-- Project 2: Office Complex -->
+        <article class="project-card snap-start group cursor-pointer" onclick="openProjectModal('Office Complex', 'Abuja, Nigeria', 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80', 'Modern multi-story commercial office complex designed with energy-efficient curtain walls, open-plan executive suites, and landscaped courtyards.')">
+          <div class="rounded-xl overflow-hidden aspect-[4/3] bg-[#0E141B] mb-3.5 border border-white/[0.07]">
+            <img
+              src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=900&q=80"
+              alt="Office Complex in Abuja, Nigeria"
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x450/0E141B/F5BD41?text=Office+Complex';"
+            />
+          </div>
+          <h3 class="font-heading font-bold text-[15.5px] text-white group-hover:text-[#F5BD41] transition-colors mb-1">
+            Office Complex
+          </h3>
+          <div class="flex items-center gap-1.5 text-[#9BA5B4] text-[12.5px]">
+            <svg class="w-3.5 h-3.5 text-[#F5BD41] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>Abuja, Nigeria</span>
+          </div>
+        </article>
+
+        <!-- Project 3: Luxury Apartments -->
+        <article class="project-card snap-start group cursor-pointer" onclick="openProjectModal('Luxury Apartments', 'Kaduna, Nigeria', 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80', 'Contemporary multi-unit residential apartments combining warm timber accents, private recessed terraces, and dedicated underground parking.')">
+          <div class="rounded-xl overflow-hidden aspect-[4/3] bg-[#0E141B] mb-3.5 border border-white/[0.07]">
+            <img
+              src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80"
+              alt="Luxury Apartments in Kaduna, Nigeria"
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x450/0E141B/F5BD41?text=Luxury+Apartments';"
+            />
+          </div>
+          <h3 class="font-heading font-bold text-[15.5px] text-white group-hover:text-[#F5BD41] transition-colors mb-1">
+            Luxury Apartments
+          </h3>
+          <div class="flex items-center gap-1.5 text-[#9BA5B4] text-[12.5px]">
+            <svg class="w-3.5 h-3.5 text-[#F5BD41] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>Kaduna, Nigeria</span>
+          </div>
+        </article>
+
+        <!-- Project 4: Retail Store -->
+        <article class="project-card snap-start group cursor-pointer" onclick="openProjectModal('Retail Store', 'Jos, Nigeria', 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80', 'Flagship commercial retail plaza featuring double-height display storefronts, warm architectural LED perimeter lighting, and generous customer walkways.')">
+          <div class="rounded-xl overflow-hidden aspect-[4/3] bg-[#0E141B] mb-3.5 border border-white/[0.07]">
+            <img
+              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"
+              alt="Retail Store in Jos, Nigeria"
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x450/0E141B/F5BD41?text=Retail+Store';"
+            />
+          </div>
+          <h3 class="font-heading font-bold text-[15.5px] text-white group-hover:text-[#F5BD41] transition-colors mb-1">
+            Retail Store
+          </h3>
+          <div class="flex items-center gap-1.5 text-[#9BA5B4] text-[12.5px]">
+            <svg class="w-3.5 h-3.5 text-[#F5BD41] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>Jos, Nigeria</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SECTION 6 — OUR IMPACT (SUNSET CRANES BACKGROUND)
+  ====================================================================== -->
+  <section class="relative py-16 lg:py-24 overflow-hidden border-y border-white/[0.07]">
+    <!-- Construction Site with Tower Cranes at Sunset -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80"
+        alt="Construction site with tower cranes silhouetted at sunset"
+        loading="lazy"
+        class="w-full h-full object-cover object-center"
+        onerror="this.onerror=null;this.src='https://placehold.co/1920x600/0B1118/F5BD41?text=Our+Impact';"
+      />
+      <div class="absolute inset-0 impact-overlay"></div>
+    </div>
+
+    <div class="relative z-10 max-w-container mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        
+        <!-- Left Column: Eyebrow, Heading, Supporting Paragraph -->
+        <div class="lg:col-span-5">
+          <span class="block text-[#F5BD41] text-[11px] sm:text-[12px] font-semibold tracking-[0.16em] uppercase mb-2.5">
+            OUR IMPACT
+          </span>
+          <h2 class="font-heading font-bold text-[28px] sm:text-[34px] lg:text-[38px] leading-[1.16] text-white mb-4">
+            Numbers That<br />
+            Tell Our Story
+          </h2>
+          <p class="text-[#C7CDD6] text-[14px] sm:text-[14.5px] leading-[1.65] max-w-[360px]">
+            We are proud of the milestones we've achieved and the value we've delivered to our clients.
+          </p>
+        </div>
+
+        <!-- Right Area: Four Compact Statistics with Gold Icons & Dividers -->
+        <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-y-8 gap-x-4">
+          
+          <!-- Metric 1: 100+ Projects Completed -->
+          <div class="flex flex-col items-center text-center px-2 sm:border-r sm:border-white/10">
+            <div class="w-11 h-11 rounded-full bg-[#0E141B]/90 border border-white/15 flex items-center justify-center text-[#F5BD41] mb-3.5">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline stroke-linecap="round" stroke-linejoin="round" points="9 22 9 12 15 12 15 22" />
+              </svg>
+            </div>
+            <div class="font-heading font-extrabold text-[26px] sm:text-[30px] text-[#F5BD41] leading-none mb-1.5">
+              100+
+            </div>
+            <div class="text-[#D8DCE2] text-[12px] font-medium">
+              Projects Completed
+            </div>
+          </div>
+
+          <!-- Metric 2: 50+ Happy Clients -->
+          <div class="flex flex-col items-center text-center px-2 sm:border-r sm:border-white/10">
+            <div class="w-11 h-11 rounded-full bg-[#0E141B]/90 border border-white/15 flex items-center justify-center text-[#F5BD41] mb-3.5">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <div class="font-heading font-extrabold text-[26px] sm:text-[30px] text-[#F5BD41] leading-none mb-1.5">
+              50+
+            </div>
+            <div class="text-[#D8DCE2] text-[12px] font-medium">
+              Happy Clients
+            </div>
+          </div>
+
+          <!-- Metric 3: 5+ Years of Excellence -->
+          <div class="flex flex-col items-center text-center px-2 sm:border-r sm:border-white/10">
+            <div class="w-11 h-11 rounded-full bg-[#0E141B]/90 border border-white/15 flex items-center justify-center text-[#F5BD41] mb-3.5">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4" />
+              </svg>
+            </div>
+            <div class="font-heading font-extrabold text-[26px] sm:text-[30px] text-[#F5BD41] leading-none mb-1.5">
+              5+
+            </div>
+            <div class="text-[#D8DCE2] text-[12px] font-medium">
+              Years of Excellence
+            </div>
+          </div>
+
+          <!-- Metric 4: 0 Compromises on Quality -->
+          <div class="flex flex-col items-center text-center px-2">
+            <div class="w-11 h-11 rounded-full bg-[#0E141B]/90 border border-white/15 flex items-center justify-center text-[#F5BD41] mb-3.5">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <polygon stroke-linecap="round" stroke-linejoin="round" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <div class="font-heading font-extrabold text-[26px] sm:text-[30px] text-[#F5BD41] leading-none mb-1.5">
+              0
+            </div>
+            <div class="text-[#D8DCE2] text-[12px] font-medium">
+              Compromises on Quality
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SECTION 7 — WHY CHOOSE US (LIGHT EDITORIAL SECTION)
+  ====================================================================== -->
+  <section id="why-us" class="bg-[#F7F8FA] text-[#0C1219] py-16 lg:py-20">
+    <div class="max-w-container mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <!-- Left Column: Eyebrow, Headline, Supporting Copy -->
+        <div class="lg:col-span-5">
+          <span class="block text-[#D89B1C] text-[11px] sm:text-[12px] font-bold tracking-[0.16em] uppercase mb-2.5">
+            WHY CHOOSE US
+          </span>
+          <h2 class="font-heading font-bold text-[28px] sm:text-[34px] lg:text-[36px] leading-[1.18] text-[#0C1219] mb-4">
+            The AGM PrimeBuild Advantage
+          </h2>
+          <p class="text-[#4A5462] text-[14.5px] leading-[1.68] max-w-[420px]">
+            We don't just build structures, we build long-term relationships based on trust, quality and excellence.
+          </p>
+        </div>
+
+        <!-- Right Column: Editorial Two-Column Grid with Thin Separators -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2">
+          
+          <!-- Advantage 1: Premium Quality Materials -->
+          <div class="flex items-center gap-4 py-5 sm:pr-6 border-b border-black/[0.08] sm:border-r">
+            <div class="text-[#E5A823] flex-shrink-0">
+              <!-- Diamond Icon -->
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 3h12l4 6-10 13L2 9Z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11 3 8 9l4 13 4-13-3-6" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2 9h20" />
+              </svg>
+            </div>
+            <div class="font-heading font-semibold text-[15px] text-[#1E2631] leading-[1.35]">
+              Premium Quality<br />Materials
+            </div>
+          </div>
+
+          <!-- Advantage 2: Skilled & Experienced Professionals -->
+          <div class="flex items-center gap-4 py-5 sm:pl-8 border-b border-black/[0.08]">
+            <div class="text-[#E5A823] flex-shrink-0">
+              <!-- Gear / Expertise Icon -->
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <circle cx="12" cy="12" r="3" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+              </svg>
+            </div>
+            <div class="font-heading font-semibold text-[15px] text-[#1E2631] leading-[1.35]">
+              Skilled &amp; Experienced<br />Professionals
+            </div>
+          </div>
+
+          <!-- Advantage 3: Safety First Always -->
+          <div class="flex items-center gap-4 py-5 sm:pr-6 border-b sm:border-b-0 border-black/[0.08] sm:border-r">
+            <div class="text-[#E5A823] flex-shrink-0">
+              <!-- Shield Check Icon -->
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4" />
+              </svg>
+            </div>
+            <div class="font-heading font-semibold text-[15px] text-[#1E2631] leading-[1.35]">
+              Safety First<br />Always
+            </div>
+          </div>
+
+          <!-- Advantage 4: Transparent Communication -->
+          <div class="flex items-center gap-4 py-5 sm:pl-8">
+            <div class="text-[#E5A823] flex-shrink-0">
+              <!-- Communication Bubble Icon -->
+              <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+            </div>
+            <div class="font-heading font-semibold text-[15px] text-[#1E2631] leading-[1.35]">
+              Transparent<br />Communication
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SECTION 8 — TESTIMONIALS
+  ====================================================================== -->
+  <section id="testimonials" class="bg-[#05090D] py-16 lg:py-24">
+    <div class="max-w-container mx-auto px-5 sm:px-8 lg:px-10">
+      
+      <!-- Heading + Circular Previous/Next Controls -->
+      <div class="flex items-end justify-between gap-4 mb-10 lg:mb-12">
+        <div>
+          <span class="block text-[#F5BD41] text-[11px] sm:text-[12px] font-semibold tracking-[0.16em] uppercase mb-2">
+            TESTIMONIALS
+          </span>
+          <h2 class="font-heading font-bold text-[28px] sm:text-[34px] lg:text-[38px] leading-[1.18] text-white">
+            What Our Clients Say
+          </h2>
+        </div>
+
+        <!-- Subtle Circular Arrow Controls -->
+        <div class="flex items-center gap-2.5">
+          <button
+            type="button"
+            id="testimonials-prev"
+            aria-label="Previous Testimonials"
+            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/15 bg-[#0C1117] hover:border-[#F5BD41] text-[#A3ACB9] hover:text-[#F5BD41] flex items-center justify-center transition-colors focus:outline-none"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m15 18-6-6 6-6" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            id="testimonials-next"
+            aria-label="Next Testimonials"
+            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/15 bg-[#0C1117] hover:border-[#F5BD41] text-[#A3ACB9] hover:text-[#F5BD41] flex items-center justify-center transition-colors focus:outline-none"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Three Testimonial Cards in One Desktop Row -->
+      <div
+        id="testimonials-track"
+        class="grid grid-flow-col auto-cols-[88%] sm:auto-cols-[60%] lg:grid-flow-row lg:grid-cols-3 gap-5 lg:gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth pb-2"
+      >
+        
+        <!-- Testimonial 1: Alh. Sani Ibrahim -->
+        <article class="snap-start bg-[#0C1117] border border-white/[0.07] rounded-2xl p-6 lg:p-7 flex items-start gap-4">
+          <img
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
+            alt="Portrait of Alh. Sani Ibrahim"
+            loading="lazy"
+            class="w-12 h-12 rounded-full object-cover flex-shrink-0 border border-white/15"
+            onerror="this.onerror=null;this.src='https://placehold.co/96x96/101820/F5BD41?text=SI';"
+          />
+          <div class="flex-1 min-w-0">
+            <p class="text-[#C7CDD6] text-[13px] sm:text-[13.5px] leading-[1.6] mb-4">
+              "AGM PrimeBuild delivered our dream home beyond expectations. Professional, reliable and truly exceptional!"
+            </p>
+            <h3 class="font-heading font-bold text-[14px] text-white leading-tight">
+              Alh. Sani Ibrahim
+            </h3>
+            <p class="text-[#8E98A8] text-[12px] mb-2.5">
+              Homeowner, Bauchi
+            </p>
+            <!-- Five Small Gold Stars -->
+            <div class="flex items-center gap-1 text-[#F5BD41]" aria-label="5 out of 5 stars">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <!-- Testimonial 2: Mr. Hassan Yusuf -->
+        <article class="snap-start bg-[#0C1117] border border-white/[0.07] rounded-2xl p-6 lg:p-7 flex items-start gap-4">
+          <img
+            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"
+            alt="Portrait of Mr. Hassan Yusuf"
+            loading="lazy"
+            class="w-12 h-12 rounded-full object-cover flex-shrink-0 border border-white/15"
+            onerror="this.onerror=null;this.src='https://placehold.co/96x96/101820/F5BD41?text=HY';"
+          />
+          <div class="flex-1 min-w-0">
+            <p class="text-[#C7CDD6] text-[13px] sm:text-[13.5px] leading-[1.6] mb-4">
+              "The team was professional, organized and delivered on time. Our office space looks amazing!"
+            </p>
+            <h3 class="font-heading font-bold text-[14px] text-white leading-tight">
+              Mr. Hassan Yusuf
+            </h3>
+            <p class="text-[#8E98A8] text-[12px] mb-2.5">
+              Business Owner, Abuja
+            </p>
+            <!-- Five Small Gold Stars -->
+            <div class="flex items-center gap-1 text-[#F5BD41]" aria-label="5 out of 5 stars">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <!-- Testimonial 3: Amina Bello -->
+        <article class="snap-start bg-[#0C1117] border border-white/[0.07] rounded-2xl p-6 lg:p-7 flex items-start gap-4">
+          <img
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80"
+            alt="Portrait of Amina Bello"
+            loading="lazy"
+            class="w-12 h-12 rounded-full object-cover flex-shrink-0 border border-white/15"
+            onerror="this.onerror=null;this.src='https://placehold.co/96x96/101820/F5BD41?text=AB';"
+          />
+          <div class="flex-1 min-w-0">
+            <p class="text-[#C7CDD6] text-[13px] sm:text-[13.5px] leading-[1.6] mb-4">
+              "Quality, attention to detail and great communication. I highly recommend AGM PrimeBuild for any construction project."
+            </p>
+            <h3 class="font-heading font-bold text-[14px] text-white leading-tight">
+              Amina Bello
+            </h3>
+            <p class="text-[#8E98A8] text-[12px] mb-2.5">
+              Client, Kaduna
+            </p>
+            <!-- Five Small Gold Stars -->
+            <div class="flex items-center gap-1 text-[#F5BD41]" aria-label="5 out of 5 stars">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SECTION 9 — FINAL CALL TO ACTION
+  ====================================================================== -->
+  <section id="contact" class="relative py-14 lg:py-16 overflow-hidden border-t border-white/[0.08]">
+    <!-- Wide Architectural Background Image -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1920&q=80"
+        alt="Modern architectural residence illuminated at night"
+        loading="lazy"
+        class="w-full h-full object-cover object-center"
+        onerror="this.onerror=null;this.src='https://placehold.co/1920x500/0B1118/F5BD41?text=Let+Us+Build+Together';"
+      />
+      <div class="absolute inset-0 cta-overlay"></div>
+    </div>
+
+    <div class="relative z-10 max-w-container mx-auto px-5 sm:px-8 lg:px-10">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+        
+        <!-- Left: Eyebrow, Headline, Supporting Text -->
+        <div class="max-w-[540px]">
+          <span class="block text-[#F5BD41] text-[11px] sm:text-[12px] font-semibold tracking-[0.16em] uppercase mb-2">
+            LET'S BUILD TOGETHER
+          </span>
+          <h2 class="font-heading font-bold text-[26px] sm:text-[32px] lg:text-[36px] leading-[1.18] text-white mb-3">
+            Ready to Start Your Project?
+          </h2>
+          <p class="text-[#C7CDD6] text-[13.5px] sm:text-[14.5px] leading-[1.6] max-w-[430px]">
+            Whether it's a home, office or commercial space, we're here to help you turn your vision into reality.
+          </p>
+        </div>
+
+        <!-- Right: Gold Consultation Button + Configurable Contact Number -->
+        <div class="flex flex-col items-start lg:items-end gap-3.5">
+          <button
+            type="button"
+            onclick="openQuoteModal('Free Project Consultation')"
+            class="inline-flex items-center justify-center gap-2.5 bg-[#F5BD41] hover:bg-[#FFD063] text-[#05090D] font-semibold text-[13.5px] sm:text-[14px] px-6 py-3.5 rounded-full transition-all shadow-md"
+          >
+            <span>Get a Free Consultation</span>
+            <svg class="w-4 h-4 stroke-[2.2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </button>
+
+          <!-- Illustrative Contact Number Bound to Configuration -->
+          <a
+            id="cta-phone-link"
+            href="tel:+2347012345678"
+            class="inline-flex items-center gap-2 text-white hover:text-[#F5BD41] font-medium text-[13.5px] sm:text-[14px] transition-colors lg:pr-2"
+            title="Illustrative contact number placeholder - configure in SITE_CONFIG"
+          >
+            <svg class="w-4 h-4 text-[#F5BD41] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span id="cta-phone-display">+234 701 234 5678</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SECTION 10 — FOOTER
+  ====================================================================== -->
+  <footer class="bg-[#05090D] border-t border-white/[0.08] pt-10 pb-8 text-[#A3ACB9]">
+    <div class="max-w-container mx-auto px-5 sm:px-8 lg:px-10">
+      
+      <!-- Top Footer Row: Logo Left, Navigation Center, Social Links Right -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8">
+        
+        <!-- Left: Official AGM PrimeBuild Logo -->
+        <a href="#home" class="flex items-center gap-3 focus:outline-none">
+          <img
+            src="logo.webp"
+            alt="AGM PrimeBuild Construction Ltd Official Logo"
+            class="h-10 w-auto object-contain"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div style="display: none;" class="items-center gap-2.5 select-none">
+            <div class="relative w-10 h-10 flex items-center justify-center">
+              <svg viewBox="0 0 64 64" class="w-10 h-10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 4L58 26L48 56H16L6 26L32 4Z" stroke="#F5BD41" stroke-width="2.5" fill="#0B1118"/>
+                <path d="M22 24V46M28 16V46M35 19V46M41 26V46" stroke="#F5BD41" stroke-width="2"/>
+                <path d="M14 48L26 24L36 48H14Z" fill="#D8DCE2" stroke="#05090D" stroke-width="1"/>
+                <path d="M20 42H48" stroke="#F5BD41" stroke-width="3"/>
+              </svg>
+            </div>
+            <div class="flex flex-col leading-none">
+              <span class="text-[#F5BD41] font-heading font-extrabold text-lg tracking-tight">AGM</span>
+              <span class="text-[#F7F8FA] font-heading font-bold text-[9.5px] tracking-[0.16em] uppercase mt-0.5">PRIMEBUILD</span>
+              <span class="text-[#A3ACB9] font-sans font-medium text-[6.5px] tracking-[0.22em] uppercase mt-0.5">CONSTRUCTION LTD</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Center: Footer Navigation Links -->
+        <ul class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-[13px] font-medium text-[#D8DCE2]">
+          <li><a href="#home" class="hover:text-[#F5BD41] transition-colors">Home</a></li>
+          <li><a href="#about" class="hover:text-[#F5BD41] transition-colors">About</a></li>
+          <li><a href="#services" class="hover:text-[#F5BD41] transition-colors">Services</a></li>
+          <li><a href="#projects" class="hover:text-[#F5BD41] transition-colors">Projects</a></li>
+          <li><a href="#why-us" class="hover:text-[#F5BD41] transition-colors">Why Us</a></li>
+          <li><a href="#contact" class="hover:text-[#F5BD41] transition-colors">Contact</a></li>
+        </ul>
+
+        <!-- Right: Social Media Icon Links (Facebook, Instagram, LinkedIn, X) -->
+        <div class="flex items-center gap-2.5">
+          <!-- Facebook -->
+          <a
+            href="#social-facebook"
+            onclick="handleSocialClick(event, 'Facebook')"
+            aria-label="AGM PrimeBuild on Facebook"
+            class="w-8 h-8 rounded-full bg-[#0E141B] border border-white/10 hover:border-[#F5BD41] text-[#D8DCE2] hover:text-[#F5BD41] flex items-center justify-center transition-colors"
+          >
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
+          <!-- Instagram -->
+          <a
+            href="#social-instagram"
+            onclick="handleSocialClick(event, 'Instagram')"
+            aria-label="AGM PrimeBuild on Instagram"
+            class="w-8 h-8 rounded-full bg-[#0E141B] border border-white/10 hover:border-[#F5BD41] text-[#D8DCE2] hover:text-[#F5BD41] flex items-center justify-center transition-colors"
+          >
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+          </a>
+          <!-- LinkedIn -->
+          <a
+            href="#social-linkedin"
+            onclick="handleSocialClick(event, 'LinkedIn')"
+            aria-label="AGM PrimeBuild on LinkedIn"
+            class="w-8 h-8 rounded-full bg-[#0E141B] border border-white/10 hover:border-[#F5BD41] text-[#D8DCE2] hover:text-[#F5BD41] flex items-center justify-center transition-colors"
+          >
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+          <!-- X (Twitter) -->
+          <a
+            href="#social-x"
+            onclick="handleSocialClick(event, 'X')"
+            aria-label="AGM PrimeBuild on X"
+            class="w-8 h-8 rounded-full bg-[#0E141B] border border-white/10 hover:border-[#F5BD41] text-[#D8DCE2] hover:text-[#F5BD41] flex items-center justify-center transition-colors"
+          >
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Thin Horizontal Divider -->
+      <div class="border-t border-white/[0.08] pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-[#8E98A8]">
+        <div>
+          &copy; 2026 AGM PrimeBuild Construction Ltd. All rights reserved.
+        </div>
+        <div class="text-[#A3ACB9]">
+          Building Today <span class="text-[#F5BD41] mx-1">•</span> Shaping Tomorrow
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       INTERACTIVE MODALS (QUOTE / CONSULTATION & PROJECT / SERVICE DETAILS)
+  ====================================================================== -->
+  <!-- Quote / Consultation Modal -->
+  <div
+    id="quote-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="quote-modal-title"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+  >
+    <div class="bg-[#0C1117] border border-white/15 rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative">
+      <button
+        type="button"
+        onclick="closeQuoteModal()"
+        aria-label="Close modal"
+        class="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 text-[#A3ACB9] hover:text-white flex items-center justify-center"
+      >
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <span class="block text-[#F5BD41] text-[11px] font-semibold tracking-[0.16em] uppercase mb-1">
+        AGM PRIMEBUILD CONSTRUCTION LTD
+      </span>
+      <h3 id="quote-modal-title" class="font-heading font-bold text-2xl text-white mb-2">
+        Request a Consultation
+      </h3>
+      <p class="text-[#A3ACB9] text-[13.5px] mb-6">
+        Share your project brief below and our engineering &amp; project management team will respond promptly.
+      </p>
+
+      <form id="quote-form" onsubmit="submitQuoteForm(event)" class="space-y-4">
+        <div>
+          <label for="client-name" class="block text-[12.5px] font-medium text-[#D8DCE2] mb-1">Full Name</label>
+          <input
+            id="client-name"
+            type="text"
+            required
+            placeholder="e.g., Alh. Sani Ibrahim"
+            class="w-full rounded-xl bg-[#05090D] border border-white/15 px-4 py-2.5 text-[14px] text-white placeholder-[#6C7686] focus:outline-none focus:border-[#F5BD41]"
+          />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="client-phone" class="block text-[12.5px] font-medium text-[#D8DCE2] mb-1">Phone Number</label>
+            <input
+              id="client-phone"
+              type="tel"
+              required
+              placeholder="+234 800 000 0000"
+              class="w-full rounded-xl bg-[#05090D] border border-white/15 px-4 py-2.5 text-[14px] text-white placeholder-[#6C7686] focus:outline-none focus:border-[#F5BD41]"
+            />
+          </div>
+          <div>
+            <label for="project-type" class="block text-[12.5px] font-medium text-[#D8DCE2] mb-1">Service Required</label>
+            <select
+              id="project-type"
+              class="w-full rounded-xl bg-[#05090D] border border-white/15 px-4 py-2.5 text-[14px] text-white focus:outline-none focus:border-[#F5BD41]"
+            >
+              <option value="Residential Construction">Residential Construction</option>
+              <option value="Commercial Construction">Commercial Construction</option>
+              <option value="Renovation & Remodeling">Renovation &amp; Remodeling</option>
+              <option value="Project Management">Project Management</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="project-notes" class="block text-[12.5px] font-medium text-[#D8DCE2] mb-1">Project Location &amp; Brief</label>
+          <textarea
+            id="project-notes"
+            rows="3"
+            required
+            placeholder="Tell us about your site location (e.g., Bauchi, Abuja, Kaduna, Jos) and project goals..."
+            class="w-full rounded-xl bg-[#05090D] border border-white/15 px-4 py-2.5 text-[14px] text-white placeholder-[#6C7686] focus:outline-none focus:border-[#F5BD41]"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full inline-flex items-center justify-center gap-2 bg-[#F5BD41] hover:bg-[#FFD063] text-[#05090D] font-semibold text-[14px] py-3 rounded-full transition-all"
+        >
+          <span>Submit Inquiry</span>
+          <svg class="w-4 h-4 stroke-[2.2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Info / Detail Modal (Used for Service & Project Previews and Status Messages) -->
+  <div
+    id="info-modal"
+    role="dialog"
+    aria-modal="true"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+  >
+    <div class="bg-[#0C1117] border border-white/15 rounded-2xl max-w-md w-full overflow-hidden shadow-2xl relative">
+      <button
+        type="button"
+        onclick="closeInfoModal()"
+        aria-label="Close detail window"
+        class="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center"
+      >
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <img id="info-modal-img" src="" alt="" class="w-full h-48 object-cover hidden" />
+      <div class="p-6">
+        <span id="info-modal-eyebrow" class="block text-[#F5BD41] text-[11px] font-semibold tracking-[0.16em] uppercase mb-1">
+          AGM PRIMEBUILD
+        </span>
+        <h3 id="info-modal-title" class="font-heading font-bold text-xl text-white mb-2"></h3>
+        <p id="info-modal-desc" class="text-[#A3ACB9] text-[14px] leading-relaxed mb-6"></p>
+        <div class="flex items-center justify-end gap-3">
+          <button
+            type="button"
+            onclick="closeInfoModal()"
+            class="px-4 py-2 rounded-full border border-white/15 text-[13px] text-[#D8DCE2] hover:text-white"
+          >
+            Close
+          </button>
+          <button
+            type="button"
+            onclick="closeInfoModal(); openQuoteModal(document.getElementById('info-modal-title').textContent);"
+            class="px-5 py-2 rounded-full bg-[#F5BD41] hover:bg-[#FFD063] text-[#05090D] font-semibold text-[13px]"
+          >
+            Request Quote
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       CONFIGURATION & INTERACTIVE APPLICATION SCRIPT
+  ====================================================================== -->
+  <script>
+    /**
+     * Clearly identifiable configuration object for contact details & social profiles
+     * so official verified company credentials can be updated before launch.
+     */
+    const SITE_CONFIG = {
+      companyName: "AGM PrimeBuild Construction Ltd",
+      illustrativePhoneDisplay: "+234 701 234 5678", // Illustrative placeholder per specification
+      illustrativePhoneHref: "tel:+2347012345678",
+      socialProfiles: {
+        Facebook: "",
+        Instagram: "",
+        LinkedIn: "",
+        X: ""
+      }
+    };
+
+    // Initialize dynamic phone placeholder from SITE_CONFIG
+    const phoneDisplayEl = document.getElementById('cta-phone-display');
+    const phoneLinkEl = document.getElementById('cta-phone-link');
+    if (phoneDisplayEl && phoneLinkEl) {
+      phoneDisplayEl.textContent = SITE_CONFIG.illustrativePhoneDisplay;
+      phoneLinkEl.setAttribute('href', SITE_CONFIG.illustrativePhoneHref);
+    }
+
+    // Mobile Navigation Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    function toggleMobileMenu() {
+      const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+      mobileMenuBtn.setAttribute('aria-expanded', String(!isExpanded));
+      mobileMenu.classList.toggle('hidden');
+      menuIconOpen.classList.toggle('hidden');
+      menuIconClose.classList.toggle('hidden');
+    }
+
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (!mobileMenu.classList.contains('hidden')) {
+          toggleMobileMenu();
+        }
+      });
+    });
+
+    // Projects & Testimonials Carousel Controls
+    function setupCarousel(trackId, prevBtnId, nextBtnId) {
+      const track = document.getElementById(trackId);
+      const prevBtn = document.getElementById(prevBtnId);
+      const nextBtn = document.getElementById(nextBtnId);
+
+      if (!track || !prevBtn || !nextBtn) return;
+
+      prevBtn.addEventListener('click', () => {
+        const cardWidth = track.firstElementChild ? track.firstElementChild.getBoundingClientRect().width + 24 : 300;
+        if (track.scrollWidth > track.clientWidth) {
+          track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        } else {
+          // On desktop where all 4 cards fit in one row, cycle the last item to the front for tactile feedback
+          const lastCard = track.lastElementChild;
+          if (lastCard) {
+            track.insertBefore(lastCard, track.firstElementChild);
+          }
+        }
+      });
+
+      nextBtn.addEventListener('click', () => {
+        const cardWidth = track.firstElementChild ? track.firstElementChild.getBoundingClientRect().width + 24 : 300;
+        if (track.scrollWidth > track.clientWidth) {
+          track.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        } else {
+          // On desktop where all cards fit in one row, cycle the first item to the end
+          const firstCard = track.firstElementChild;
+          if (firstCard) {
+            track.appendChild(firstCard);
+          }
+        }
+      });
+    }
+
+    setupCarousel('projects-track', 'projects-prev', 'projects-next');
+    setupCarousel('testimonials-track', 'testimonials-prev', 'testimonials-next');
+
+    // Modal Interactions
+    const quoteModal = document.getElementById('quote-modal');
+    const infoModal = document.getElementById('info-modal');
+
+    function openQuoteModal(defaultService) {
+      const selectEl = document.getElementById('project-type');
+      if (selectEl && defaultService) {
+        for (let i = 0; i < selectEl.options.length; i++) {
+          if (selectEl.options[i].value.toLowerCase() === defaultService.toLowerCase()) {
+            selectEl.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      quoteModal.classList.remove('hidden');
+      quoteModal.classList.add('flex');
+    }
+
+    function closeQuoteModal() {
+      quoteModal.classList.add('hidden');
+      quoteModal.classList.remove('flex');
+    }
+
+    function openServiceDetail(title, description) {
+      const imgEl = document.getElementById('info-modal-img');
+      imgEl.classList.add('hidden');
+      document.getElementById('info-modal-eyebrow').textContent = 'OUR SERVICES';
+      document.getElementById('info-modal-title').textContent = title;
+      document.getElementById('info-modal-desc').textContent = description;
+      infoModal.classList.remove('hidden');
+      infoModal.classList.add('flex');
+    }
+
+    function openProjectModal(title, location, imageUrl, description) {
+      const imgEl = document.getElementById('info-modal-img');
+      imgEl.src = imageUrl;
+      imgEl.alt = title + ' - ' + location;
+      imgEl.classList.remove('hidden');
+      document.getElementById('info-modal-eyebrow').textContent = location.toUpperCase();
+      document.getElementById('info-modal-title').textContent = title;
+      document.getElementById('info-modal-desc').textContent = description;
+      infoModal.classList.remove('hidden');
+      infoModal.classList.add('flex');
+    }
+
+    function closeInfoModal() {
+      infoModal.classList.add('hidden');
+      infoModal.classList.remove('flex');
+    }
+
+    function submitQuoteForm(event) {
+      event.preventDefault();
+      const name = document.getElementById('client-name').value;
+      const service = document.getElementById('project-type').value;
+      closeQuoteModal();
+      document.getElementById('quote-form').reset();
+      openServiceDetail(
+        'Inquiry Received',
+        `Thank you, ${name}. Your inquiry regarding ${service} has been logged by AGM PrimeBuild Construction Ltd. Our project team will reach out shortly.`
+      );
+    }
+
+    function handleSocialClick(event, platform) {
+      const url = SITE_CONFIG.socialProfiles[platform];
+      if (!url) {
+        event.preventDefault();
+        openServiceDetail(
+          `${platform} Profile`,
+          `Official ${platform} profile URL can be configured in SITE_CONFIG.socialProfiles.${platform} prior to launch.`
+        );
+      }
+    }
+
+    // Close modals on Escape key or backdrop click
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeQuoteModal();
+        closeInfoModal();
+      }
+    });
+
+    quoteModal.addEventListener('click', (e) => {
+      if (e.target === quoteModal) closeQuoteModal();
+    });
+
+    infoModal.addEventListener('click', (e) => {
+      if (e.target === infoModal) closeInfoModal();
+    });
+  </script>
+</body>
+</html>
