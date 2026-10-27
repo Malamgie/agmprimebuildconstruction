@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -161,6 +160,14 @@
       border-radius: 2px;
     }
 
+    /* Architectural Blueprint Grid Pattern for Image Placeholders */
+    .blueprint-placeholder-grid {
+      background-image: 
+        linear-gradient(to right, rgba(245, 189, 65, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(245, 189, 65, 0.06) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, ::before, ::after {
         animation-duration: 0.01ms !important;
@@ -173,10 +180,125 @@
 </head>
 <body class="bg-[#05090D] text-[#F5F6F8] selection:bg-[#F5BD41] selection:text-[#05090D]">
 
+  <!-- ===================================================================
+       SECTION 1 — FIXED HEADER AND NAVIGATION (STAYS FIXED ON TOP ON SCROLL)
+  ==================================================================== -->
+  <header id="main-header" class="fixed top-0 inset-x-0 z-40 w-full bg-[#05090D]/90 backdrop-blur-md border-b border-white/[0.08] py-3.5 lg:py-4 transition-all duration-300 shadow-lg shadow-black/30">
+    <div class="max-w-container mx-auto px-5 sm:px-8 lg:px-10">
+      <nav class="flex items-center justify-between" aria-label="Main Navigation">
+        
+        <!-- Left: Official AGM PrimeBuild Logo with Fallback Lockup -->
+        <a href="#home" class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F5BD41] rounded-lg">
+          <img
+            src="logoo.webp"
+            alt="AGM PrimeBuild Construction Ltd Official Logo"
+            class="h-11 sm:h-12 w-auto object-contain"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <!-- Exact visual recreation of the AGM PrimeBuild crest & typography if logo.webp is not found locally -->
+          <div style="display: none;" class="items-center gap-2.5 select-none">
+            <div class="relative w-11 h-11 flex items-center justify-center">
+              <img
+                src="logo.webp"
+                alt="AGM PrimeBuild Construction Ltd Official Logo"
+                class="h-11 sm:h-12 w-auto object-contain"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div style="display: none;" class="w-10 h-10 rounded-lg bg-[#F5BD41]/15 border border-[#F5BD41]/40 items-center justify-center text-[#F5BD41] font-heading font-extrabold text-sm">
+                AGM
+              </div>
+            </div>
+            <div class="flex flex-col leading-none">
+              <span class="text-[#F5BD41] font-heading font-extrabold text-xl sm:text-2xl tracking-tight">AGM</span>
+              <span class="text-[#F7F8FA] font-heading font-bold text-[10px] sm:text-[11px] tracking-[0.16em] uppercase mt-0.5">PRIMEBUILD</span>
+              <span class="text-[#A3ACB9] font-sans font-medium text-[7px] tracking-[0.22em] uppercase mt-0.5">CONSTRUCTION LTD</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Center: Navigation Links (Desktop) -->
+        <ul class="hidden lg:flex items-center gap-7 xl:gap-8 text-[14px] font-medium">
+          <li>
+            <a href="#home" data-nav="home" class="nav-link text-white nav-active-underline transition-colors hover:text-[#F5BD41] py-1">Home</a>
+          </li>
+          <li>
+            <a href="#about" data-nav="about" class="nav-link text-[#D8DCE2] hover:text-white transition-colors py-1">About</a>
+          </li>
+          <li>
+            <a href="#services" data-nav="services" class="nav-link text-[#D8DCE2] hover:text-white transition-colors py-1">Services</a>
+          </li>
+          <li>
+            <a href="#projects" data-nav="projects" class="nav-link text-[#D8DCE2] hover:text-white transition-colors py-1">Projects</a>
+          </li>
+          <li>
+            <a href="#team" data-nav="team" class="nav-link text-[#D8DCE2] hover:text-white transition-colors py-1">Team</a>
+          </li>
+          <li>
+            <a href="#compliance" data-nav="compliance" class="nav-link text-[#D8DCE2] hover:text-white transition-colors py-1">Compliance</a>
+          </li>
+          <li>
+            <a href="#why-us" data-nav="why-us" class="nav-link text-[#D8DCE2] hover:text-white transition-colors py-1">Why Us</a>
+          </li>
+          <li>
+            <a href="#contact" data-nav="contact" class="nav-link text-[#D8DCE2] hover:text-white transition-colors py-1">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Right: Prominent Gold "Get a Quote" CTA & Mobile Hamburger -->
+        <div class="flex items-center gap-3">
+          <button
+            type="button"
+            onclick="openQuoteModal('General Quote Request')"
+            class="inline-flex items-center gap-2 bg-[#F5BD41] hover:bg-[#FFD063] active:scale-[0.99] text-[#05090D] font-semibold text-[13px] sm:text-[14px] px-4 sm:px-5 py-2.5 rounded-full transition-all shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#F5BD41] focus-visible:ring-offset-[#05090D]"
+          >
+            <span>Get a Quote</span>
+            <svg class="w-3.5 h-3.5 stroke-[2.2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </button>
+
+          <!-- Mobile Menu Trigger -->
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Toggle Navigation Menu"
+            class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-white/15 bg-[#0B1118]/80 text-white hover:border-[#F5BD41] hover:text-[#F5BD41] transition-colors focus:outline-none"
+          >
+            <svg id="menu-icon-open" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+            <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Accessible Mobile Navigation Drawer -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden mt-4 rounded-2xl bg-[#0B1118]/95 backdrop-blur-md border border-white/10 p-5 shadow-2xl"
+      >
+        <ul class="flex flex-col space-y-2.5 text-[15px] font-medium">
+          <li><a href="#home" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#F5BD41] bg-white/5">Home</a></li>
+          <li><a href="#about" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#D8DCE2] hover:text-white hover:bg-white/5">About</a></li>
+          <li><a href="#services" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#D8DCE2] hover:text-white hover:bg-white/5">Services</a></li>
+          <li><a href="#projects" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#D8DCE2] hover:text-white hover:bg-white/5">Projects</a></li>
+          <li><a href="#team" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#D8DCE2] hover:text-white hover:bg-white/5">Team</a></li>
+          <li><a href="#compliance" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#D8DCE2] hover:text-white hover:bg-white/5">Compliance</a></li>
+          <li><a href="#why-us" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#D8DCE2] hover:text-white hover:bg-white/5">Why Us</a></li>
+          <li><a href="#contact" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#D8DCE2] hover:text-white hover:bg-white/5">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
   <!-- =====================================================================
-       HERO & INTEGRATED NAVIGATION WRAPPER (SECTIONS 1 & 2)
+       HERO WRAPPER (SECTION 2)
   ====================================================================== -->
-  <div id="home" class="relative w-full min-h-[710px] lg:min-h-[790px] xl:min-h-[830px] flex flex-col justify-between overflow-hidden bg-[#05090D]">
+  <div id="home" class="relative w-full min-h-[710px] lg:min-h-[790px] xl:min-h-[830px] pt-20 lg:pt-24 flex flex-col justify-between overflow-hidden bg-[#05090D]">
     
     <!-- Architectural Background Photograph -->
     <div class="absolute inset-0 z-0">
@@ -192,110 +314,6 @@
       <div class="absolute top-0 inset-x-0 h-32 hero-top-vignette"></div>
       <div class="absolute bottom-0 inset-x-0 h-48 hero-bottom-vignette"></div>
     </div>
-
-    <!-- ===================================================================
-         SECTION 1 — HEADER AND NAVIGATION
-    ==================================================================== -->
-    <header class="relative z-30 w-full pt-5 pb-3 lg:pt-7 lg:pb-4">
-      <div class="max-w-container mx-auto px-5 sm:px-8 lg:px-10">
-        <nav class="flex items-center justify-between" aria-label="Main Navigation">
-          
-          <!-- Left: Official AGM PrimeBuild Logo with Fallback Lockup -->
-          <a href="#home" class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F5BD41] rounded-lg">
-            <img
-              src="logoo.webp"
-              alt="AGM PrimeBuild Construction Ltd Official Logo"
-              class="h-11 sm:h-12 w-auto object-contain"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            />
-            <!-- Exact visual recreation of the AGM PrimeBuild crest & typography if logo.webp is not found locally -->
-            <div style="display: none;" class="items-center gap-2.5 select-none">
-              <div class="relative w-11 h-11 flex items-center justify-center">
-                <img
-              src="logo.webp"
-              alt="AGM PrimeBuild Construction Ltd Official Logo"
-              class="h-11 sm:h-12 w-auto object-contain"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            />
-              </div>
-              <div class="flex flex-col leading-none">
-                <span class="text-[#F5BD41] font-heading font-extrabold text-xl sm:text-2xl tracking-tight">AGM</span>
-                <span class="text-[#F7F8FA] font-heading font-bold text-[10px] sm:text-[11px] tracking-[0.16em] uppercase mt-0.5">PRIMEBUILD</span>
-                <span class="text-[#A3ACB9] font-sans font-medium text-[7px] tracking-[0.22em] uppercase mt-0.5">CONSTRUCTION LTD</span>
-              </div>
-            </div>
-          </a>
-
-          <!-- Center: Navigation Links (Desktop) -->
-          <ul class="hidden lg:flex items-center gap-8 xl:gap-9 text-[14px] font-medium">
-            <li>
-              <a href="#home" data-nav="home" class="nav-link text-white nav-active-underline transition-colors hover:text-[#F5BD41] py-1">Home</a>
-            </li>
-            <li>
-              <a href="#about" data-nav="about" class="nav-link text-[#D8DCE2] hover:text-white transition-colors py-1">About</a>
-            </li>
-            <li>
-              <a href="#services" data-nav="services" class="nav-link text-[#D8DCE2] hover:text-white transition-colors py-1">Services</a>
-            </li>
-            <li>
-              <a href="#projects" data-nav="projects" class="nav-link text-[#D8DCE2] hover:text-white transition-colors py-1">Projects</a>
-            </li>
-            <li>
-              <a href="#why-us" data-nav="why-us" class="nav-link text-[#D8DCE2] hover:text-white transition-colors py-1">Why Us</a>
-            </li>
-            <li>
-              <a href="#contact" data-nav="contact" class="nav-link text-[#D8DCE2] hover:text-white transition-colors py-1">Contact</a>
-            </li>
-          </ul>
-
-          <!-- Right: Prominent Gold "Get a Quote" CTA & Mobile Hamburger -->
-          <div class="flex items-center gap-3">
-            <button
-              type="button"
-              onclick="openQuoteModal('General Quote Request')"
-              class="inline-flex items-center gap-2 bg-[#F5BD41] hover:bg-[#FFD063] active:scale-[0.99] text-[#05090D] font-semibold text-[13px] sm:text-[14px] px-4 sm:px-5 py-2.5 rounded-full transition-all shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#F5BD41] focus-visible:ring-offset-[#05090D]"
-            >
-              <span>Get a Quote</span>
-              <svg class="w-3.5 h-3.5 stroke-[2.2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
-              </svg>
-            </button>
-
-            <!-- Mobile Menu Trigger -->
-            <button
-              id="mobile-menu-btn"
-              type="button"
-              aria-expanded="false"
-              aria-controls="mobile-menu"
-              aria-label="Toggle Navigation Menu"
-              class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-white/15 bg-[#0B1118]/80 text-white hover:border-[#F5BD41] hover:text-[#F5BD41] transition-colors focus:outline-none"
-            >
-              <svg id="menu-icon-open" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
-              </svg>
-              <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-        </nav>
-
-        <!-- Accessible Mobile Navigation Drawer -->
-        <div
-          id="mobile-menu"
-          class="hidden lg:hidden mt-4 rounded-2xl bg-[#0B1118]/95 backdrop-blur-md border border-white/10 p-5 shadow-2xl"
-        >
-          <ul class="flex flex-col space-y-3 text-[15px] font-medium">
-            <li><a href="#home" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#F5BD41] bg-white/5">Home</a></li>
-            <li><a href="#about" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#D8DCE2] hover:text-white hover:bg-white/5">About</a></li>
-            <li><a href="#services" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#D8DCE2] hover:text-white hover:bg-white/5">Services</a></li>
-            <li><a href="#projects" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#D8DCE2] hover:text-white hover:bg-white/5">Projects</a></li>
-            <li><a href="#why-us" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#D8DCE2] hover:text-white hover:bg-white/5">Why Us</a></li>
-            <li><a href="#contact" class="mobile-nav-link block py-2 px-3 rounded-lg text-[#D8DCE2] hover:text-white hover:bg-white/5">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </header>
 
     <!-- ===================================================================
          SECTION 2 — HERO CONTENT & TRUST BAR
@@ -668,7 +686,7 @@
   </section>
 
   <!-- =====================================================================
-       SECTION 5 — FEATURED PROJECTS
+       SECTION 5 — FEATURED PROJECTS (CLICK TO VIEW BEFORE / ONGOING / AFTER)
   ====================================================================== -->
   <section id="projects" class="bg-[#05090D] py-16 lg:py-24">
     <div class="max-w-container mx-auto px-5 sm:px-8 lg:px-10">
@@ -682,6 +700,9 @@
           <h2 class="font-heading font-bold text-[28px] sm:text-[34px] lg:text-[38px] leading-[1.18] text-white">
             Our Recent Projects
           </h2>
+          <p class="text-[#9BA5B4] text-[13.5px] mt-2">
+            Click on any project card below to inspect its complete <span class="text-[#F5BD41] font-medium">Before, Ongoing &amp; After</span> construction stages.
+          </p>
         </div>
 
         <!-- Subtle Circular Arrow Controls -->
@@ -716,8 +737,8 @@
       >
         
         <!-- Project 1: Residential House -->
-        <article class=" project-card snap-start group cursor-pointer" onclick="openProjectModal('Residential House', 'Bauchi, Nigeria', 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80', 'A bespoke 5-bedroom luxury contemporary residence featuring cantilevered balconies, floor-to-ceiling glazing, and integrated smart-home automation.')">
-          <div class="rounded-xl overflow-hidden aspect-[4/3] bg-[#0E141B] mb-3.5 border border-white/[0.07]">
+        <article class="project-card snap-start group cursor-pointer" onclick="openProjectGalleryModal('residential-house')">
+          <div class="relative rounded-xl overflow-hidden aspect-[4/3] bg-[#0E141B] mb-3.5 border border-white/[0.07] group-hover:border-[#F5BD41]/40 transition-colors">
             <img
               src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80"
               alt="Residential House in Bauchi, Nigeria"
@@ -725,6 +746,14 @@
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               onerror="this.onerror=null;this.src='https://placehold.co/600x450/0E141B/F5BD41?text=Residential+House';"
             />
+            <div class="absolute bottom-2.5 right-2.5 bg-[#05090D]/85 backdrop-blur-sm border border-white/15 rounded-full px-3 py-1 flex items-center gap-1.5 text-[11px] font-medium text-[#F5BD41]">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <path d="m21 15-5-5L5 21" />
+              </svg>
+              <span>3 Stages (Before • Ongoing • After)</span>
+            </div>
           </div>
           <h3 class="font-heading font-bold text-[15.5px] text-white group-hover:text-[#F5BD41] transition-colors mb-1">
             Residential House
@@ -739,8 +768,8 @@
         </article>
 
         <!-- Project 2: Office Complex -->
-        <article class="project-card snap-start group cursor-pointer" onclick="openProjectModal('Office Complex', 'Abuja, Nigeria', 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80', 'Modern multi-story commercial office complex designed with energy-efficient curtain walls, open-plan executive suites, and landscaped courtyards.')">
-          <div class="rounded-xl overflow-hidden aspect-[4/3] bg-[#0E141B] mb-3.5 border border-white/[0.07]">
+        <article class="project-card snap-start group cursor-pointer" onclick="openProjectGalleryModal('office-complex')">
+          <div class="relative rounded-xl overflow-hidden aspect-[4/3] bg-[#0E141B] mb-3.5 border border-white/[0.07] group-hover:border-[#F5BD41]/40 transition-colors">
             <img
               src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=900&q=80"
               alt="Office Complex in Abuja, Nigeria"
@@ -748,6 +777,14 @@
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               onerror="this.onerror=null;this.src='https://placehold.co/600x450/0E141B/F5BD41?text=Office+Complex';"
             />
+            <div class="absolute bottom-2.5 right-2.5 bg-[#05090D]/85 backdrop-blur-sm border border-white/15 rounded-full px-3 py-1 flex items-center gap-1.5 text-[11px] font-medium text-[#F5BD41]">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <path d="m21 15-5-5L5 21" />
+              </svg>
+              <span>3 Stages (Before • Ongoing • After)</span>
+            </div>
           </div>
           <h3 class="font-heading font-bold text-[15.5px] text-white group-hover:text-[#F5BD41] transition-colors mb-1">
             Office Complex
@@ -762,8 +799,8 @@
         </article>
 
         <!-- Project 3: Luxury Apartments -->
-        <article class="project-card snap-start group cursor-pointer" onclick="openProjectModal('Luxury Apartments', 'Kaduna, Nigeria', 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80', 'Contemporary multi-unit residential apartments combining warm timber accents, private recessed terraces, and dedicated underground parking.')">
-          <div class="rounded-xl overflow-hidden aspect-[4/3] bg-[#0E141B] mb-3.5 border border-white/[0.07]">
+        <article class="project-card snap-start group cursor-pointer" onclick="openProjectGalleryModal('luxury-apartments')">
+          <div class="relative rounded-xl overflow-hidden aspect-[4/3] bg-[#0E141B] mb-3.5 border border-white/[0.07] group-hover:border-[#F5BD41]/40 transition-colors">
             <img
               src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80"
               alt="Luxury Apartments in Kaduna, Nigeria"
@@ -771,6 +808,14 @@
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               onerror="this.onerror=null;this.src='https://placehold.co/600x450/0E141B/F5BD41?text=Luxury+Apartments';"
             />
+            <div class="absolute bottom-2.5 right-2.5 bg-[#05090D]/85 backdrop-blur-sm border border-white/15 rounded-full px-3 py-1 flex items-center gap-1.5 text-[11px] font-medium text-[#F5BD41]">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <path d="m21 15-5-5L5 21" />
+              </svg>
+              <span>3 Stages (Before • Ongoing • After)</span>
+            </div>
           </div>
           <h3 class="font-heading font-bold text-[15.5px] text-white group-hover:text-[#F5BD41] transition-colors mb-1">
             Luxury Apartments
@@ -785,8 +830,8 @@
         </article>
 
         <!-- Project 4: Retail Store -->
-        <article class="project-card snap-start group cursor-pointer" onclick="openProjectModal('Retail Store', 'Jos, Nigeria', 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80', 'Flagship commercial retail plaza featuring double-height display storefronts, warm architectural LED perimeter lighting, and generous customer walkways.')">
-          <div class="rounded-xl overflow-hidden aspect-[4/3] bg-[#0E141B] mb-3.5 border border-white/[0.07]">
+        <article class="project-card snap-start group cursor-pointer" onclick="openProjectGalleryModal('retail-store')">
+          <div class="relative rounded-xl overflow-hidden aspect-[4/3] bg-[#0E141B] mb-3.5 border border-white/[0.07] group-hover:border-[#F5BD41]/40 transition-colors">
             <img
               src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80"
               alt="Retail Store in Jos, Nigeria"
@@ -794,6 +839,14 @@
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               onerror="this.onerror=null;this.src='https://placehold.co/600x450/0E141B/F5BD41?text=Retail+Store';"
             />
+            <div class="absolute bottom-2.5 right-2.5 bg-[#05090D]/85 backdrop-blur-sm border border-white/15 rounded-full px-3 py-1 flex items-center gap-1.5 text-[11px] font-medium text-[#F5BD41]">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <path d="m21 15-5-5L5 21" />
+              </svg>
+              <span>3 Stages (Before • Ongoing • After)</span>
+            </div>
           </div>
           <h3 class="font-heading font-bold text-[15.5px] text-white group-hover:text-[#F5BD41] transition-colors mb-1">
             Retail Store
@@ -806,6 +859,319 @@
             <span>Jos, Nigeria</span>
           </div>
         </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       NEW SECTION — MANAGEMENT & TECHNICAL TEAM (WITH IMAGE PLACEHOLDERS)
+  ====================================================================== -->
+  <section id="team" class="bg-[#080D13] py-16 lg:py-24 border-t border-white/[0.07]">
+    <div class="max-w-container mx-auto px-5 sm:px-8 lg:px-10">
+      
+      <!-- Section Heading Row -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 lg:mb-14">
+        <div>
+          <span class="block text-[#F5BD41] text-[11px] sm:text-[12px] font-semibold tracking-[0.16em] uppercase mb-2.5">
+            LEADERSHIP &amp; ENGINEERING EXCELLENCE
+          </span>
+          <h2 class="font-heading font-bold text-[28px] sm:text-[34px] lg:text-[38px] leading-[1.18] text-white">
+            Management &amp; Technical Team
+          </h2>
+        </div>
+        <p class="text-[#A3ACB9] text-[14px] sm:text-[14.5px] leading-[1.65] lg:max-w-[440px] lg:pb-1">
+          Our multidisciplinary team of executive leaders, architects, engineers, and surveyors brings rigorous technical precision and accountability to every project site.
+        </p>
+      </div>
+
+      <!-- Team Grid: 5 Members Professionally Presented with Image Placeholders -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
+        
+        <!-- Team Member 1: Abubakar Garba Musa (Managing Director) -->
+        <article class="group bg-[#0C1117] hover:bg-[#101720] border border-white/[0.08] hover:border-[#F5BD41]/40 rounded-2xl overflow-hidden flex flex-col transition-all duration-300 shadow-lg">
+          <!-- Dedicated Portrait Image Placeholder -->
+          <div class="relative aspect-[4/3.4] w-full bg-[#090E14] blueprint-placeholder-grid border-b border-white/[0.07] flex flex-col items-center justify-center p-6 overflow-hidden">
+            <img
+              src="team-abubakar-garba-musa.jpg"
+              alt="Abubakar Garba Musa - Managing Director"
+              class="absolute inset-0 w-full h-full object-cover object-top z-10"
+              onerror="this.style.display='none';"
+            />
+            <!-- Executive Placeholder UI (Visible until image file is provided) -->
+            <div class="relative z-0 flex flex-col items-center text-center select-none">
+              <div class="w-20 h-20 rounded-full bg-[#131B24] border-2 border-dashed border-[#F5BD41]/45 flex items-center justify-center text-[#F5BD41] mb-3 group-hover:scale-105 transition-transform">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM12 14a7 7 0 0 0-7 7h14a7 7 0 0 0-7-7Z" />
+                </svg>
+              </div>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#05090D]/90 border border-white/10 text-[11px] font-medium text-[#A3ACB9] tracking-wide uppercase">
+                <svg class="w-3 h-3 text-[#F5BD41]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <path d="m21 15-5-5L5 21" />
+                </svg>
+                Portrait Image Placeholder
+              </span>
+            </div>
+            <!-- Role Ribbon Badge -->
+            <div class="absolute top-3.5 left-3.5 z-20 bg-[#F5BD41] text-[#05090D] font-heading font-bold text-[10.5px] tracking-[0.12em] uppercase px-3 py-1 rounded-full shadow">
+              Executive Leadership
+            </div>
+          </div>
+
+          <!-- Member Details -->
+          <div class="p-6 lg:p-7 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="block text-[#F5BD41] text-[11.5px] font-semibold tracking-[0.14em] uppercase mb-1">
+                Managing Director
+              </span>
+              <h3 class="font-heading font-bold text-[20px] text-white mb-3">
+                Abubakar Garba Musa
+              </h3>
+              <p class="text-[#9BA5B4] text-[13.5px] leading-[1.65]">
+                Provides overall strategic direction, corporate governance, and executive oversight across all AGM PrimeBuild developments. He leads client partnerships, capital project planning, and quality assurance to ensure every structure meets international construction standards.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-white/[0.06] flex items-center justify-between text-[12px] text-[#8E98A8]">
+              <span>Corporate Strategy &amp; Execution</span>
+              <span class="text-[#F5BD41] font-semibold">MD / CEO</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Team Member 2: Ameer Muhammad (Site Surveyor) -->
+        <article class="group bg-[#0C1117] hover:bg-[#101720] border border-white/[0.08] hover:border-[#F5BD41]/40 rounded-2xl overflow-hidden flex flex-col transition-all duration-300 shadow-lg">
+          <!-- Dedicated Portrait Image Placeholder -->
+          <div class="relative aspect-[4/3.4] w-full bg-[#090E14] blueprint-placeholder-grid border-b border-white/[0.07] flex flex-col items-center justify-center p-6 overflow-hidden">
+            <img
+              src="team-ameer-muhammad.jpg"
+              alt="Ameeer Muhammad - Site Surveyor"
+              class="absolute inset-0 w-full h-full object-cover object-top z-10"
+              onerror="this.style.display='none';"
+            />
+            <div class="relative z-0 flex flex-col items-center text-center select-none">
+              <div class="w-20 h-20 rounded-full bg-[#131B24] border-2 border-dashed border-[#F5BD41]/45 flex items-center justify-center text-[#F5BD41] mb-3 group-hover:scale-105 transition-transform">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM12 14a7 7 0 0 0-7 7h14a7 7 0 0 0-7-7Z" />
+                </svg>
+              </div>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#05090D]/90 border border-white/10 text-[11px] font-medium text-[#A3ACB9] tracking-wide uppercase">
+                <svg class="w-3 h-3 text-[#F5BD41]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <path d="m21 15-5-5L5 21" />
+                </svg>
+                Portrait Image Placeholder
+              </span>
+            </div>
+            <div class="absolute top-3.5 left-3.5 z-20 bg-[#131B24] border border-white/15 text-[#D8DCE2] font-heading font-semibold text-[10.5px] tracking-[0.12em] uppercase px-3 py-1 rounded-full">
+              Geomatics &amp; Surveying
+            </div>
+          </div>
+
+          <!-- Member Details -->
+          <div class="p-6 lg:p-7 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="block text-[#F5BD41] text-[11.5px] font-semibold tracking-[0.14em] uppercase mb-1">
+                Site Surveyor
+              </span>
+              <h3 class="font-heading font-bold text-[20px] text-white mb-3">
+                Ameeer Muhammad
+              </h3>
+              <p class="text-[#9BA5B4] text-[13.5px] leading-[1.65]">
+                Spearheads land and engineering surveys, topographical mapping, boundary verification, and precision setting-out operations. Ensures every foundation, column grid, and elevation aligns accurately with approved architectural and structural drawings.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-white/[0.06] flex items-center justify-between text-[12px] text-[#8E98A8]">
+              <span>Topographical &amp; Layout Precision</span>
+              <span class="text-[#F5BD41] font-semibold">Surveyor</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Team Member 3: Hamza Muhammad Abubakar (Civil Engineer) -->
+        <article class="group bg-[#0C1117] hover:bg-[#101720] border border-white/[0.08] hover:border-[#F5BD41]/40 rounded-2xl overflow-hidden flex flex-col transition-all duration-300 shadow-lg">
+          <!-- Dedicated Portrait Image Placeholder -->
+          <div class="relative aspect-[4/3.4] w-full bg-[#090E14] blueprint-placeholder-grid border-b border-white/[0.07] flex flex-col items-center justify-center p-6 overflow-hidden">
+            <img
+              src="team-hamza-muhammad-abubakar.jpg"
+              alt="Hamza Muhammad Abubakar - Civil Engineer"
+              class="absolute inset-0 w-full h-full object-cover object-top z-10"
+              onerror="this.style.display='none';"
+            />
+            <div class="relative z-0 flex flex-col items-center text-center select-none">
+              <div class="w-20 h-20 rounded-full bg-[#131B24] border-2 border-dashed border-[#F5BD41]/45 flex items-center justify-center text-[#F5BD41] mb-3 group-hover:scale-105 transition-transform">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM12 14a7 7 0 0 0-7 7h14a7 7 0 0 0-7-7Z" />
+                </svg>
+              </div>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#05090D]/90 border border-white/10 text-[11px] font-medium text-[#A3ACB9] tracking-wide uppercase">
+                <svg class="w-3 h-3 text-[#F5BD41]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <path d="m21 15-5-5L5 21" />
+                </svg>
+                Portrait Image Placeholder
+              </span>
+            </div>
+            <div class="absolute top-3.5 left-3.5 z-20 bg-[#131B24] border border-white/15 text-[#D8DCE2] font-heading font-semibold text-[10.5px] tracking-[0.12em] uppercase px-3 py-1 rounded-full">
+              Structural &amp; Civil Works
+            </div>
+          </div>
+
+          <!-- Member Details -->
+          <div class="p-6 lg:p-7 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="block text-[#F5BD41] text-[11.5px] font-semibold tracking-[0.14em] uppercase mb-1">
+                Civil Engineer
+              </span>
+              <h3 class="font-heading font-bold text-[20px] text-white mb-3">
+                Hamza Muhammad Abubakar
+              </h3>
+              <p class="text-[#9BA5B4] text-[13.5px] leading-[1.65]">
+                Directs structural analysis, reinforced concrete design, geotechnical evaluation, and civil infrastructure engineering. Ensures every building framework, load-bearing element, and drainage system is engineered for maximum durability and safety.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-white/[0.06] flex items-center justify-between text-[12px] text-[#8E98A8]">
+              <span>Structural Integrity &amp; Design</span>
+              <span class="text-[#F5BD41] font-semibold">Civil Eng.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Team Member 4: Aliyu Garba (Architect) -->
+        <article class="group bg-[#0C1117] hover:bg-[#101720] border border-white/[0.08] hover:border-[#F5BD41]/40 rounded-2xl overflow-hidden flex flex-col transition-all duration-300 shadow-lg lg:col-start-1">
+          <!-- Dedicated Portrait Image Placeholder -->
+          <div class="relative aspect-[4/3.4] w-full bg-[#090E14] blueprint-placeholder-grid border-b border-white/[0.07] flex flex-col items-center justify-center p-6 overflow-hidden">
+            <img
+              src="team-aliyu-garba.jpg"
+              alt="Aliyu Garba - Architect"
+              class="absolute inset-0 w-full h-full object-cover object-top z-10"
+              onerror="this.style.display='none';"
+            />
+            <div class="relative z-0 flex flex-col items-center text-center select-none">
+              <div class="w-20 h-20 rounded-full bg-[#131B24] border-2 border-dashed border-[#F5BD41]/45 flex items-center justify-center text-[#F5BD41] mb-3 group-hover:scale-105 transition-transform">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM12 14a7 7 0 0 0-7 7h14a7 7 0 0 0-7-7Z" />
+                </svg>
+              </div>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#05090D]/90 border border-white/10 text-[11px] font-medium text-[#A3ACB9] tracking-wide uppercase">
+                <svg class="w-3 h-3 text-[#F5BD41]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <path d="m21 15-5-5L5 21" />
+                </svg>
+                Portrait Image Placeholder
+              </span>
+            </div>
+            <div class="absolute top-3.5 left-3.5 z-20 bg-[#131B24] border border-white/15 text-[#D8DCE2] font-heading font-semibold text-[10.5px] tracking-[0.12em] uppercase px-3 py-1 rounded-full">
+              Architectural Design
+            </div>
+          </div>
+
+          <!-- Member Details -->
+          <div class="p-6 lg:p-7 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="block text-[#F5BD41] text-[11.5px] font-semibold tracking-[0.14em] uppercase mb-1">
+                Architect
+              </span>
+              <h3 class="font-heading font-bold text-[20px] text-white mb-3">
+                Aliyu Garba
+              </h3>
+              <p class="text-[#9BA5B4] text-[13.5px] leading-[1.65]">
+                Leads conceptual architecture, spatial planning, 3D visualization, and working drawing production. Blends contemporary aesthetics with passive climate-responsive design to create timeless residential and commercial spaces.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-white/[0.06] flex items-center justify-between text-[12px] text-[#8E98A8]">
+              <span>Master Planning &amp; Aesthetics</span>
+              <span class="text-[#F5BD41] font-semibold">Lead Architect</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Team Member 5: Abdullahi Garba Musa (Site Engineer) -->
+        <article class="group bg-[#0C1117] hover:bg-[#101720] border border-white/[0.08] hover:border-[#F5BD41]/40 rounded-2xl overflow-hidden flex flex-col transition-all duration-300 shadow-lg">
+          <!-- Dedicated Portrait Image Placeholder -->
+          <div class="relative aspect-[4/3.4] w-full bg-[#090E14] blueprint-placeholder-grid border-b border-white/[0.07] flex flex-col items-center justify-center p-6 overflow-hidden">
+            <img
+              src="team-abdullahi-garba-musa.jpg"
+              alt="Abdullahi Garba Musa - Site Engineer"
+              class="absolute inset-0 w-full h-full object-cover object-top z-10"
+              onerror="this.style.display='none';"
+            />
+            <div class="relative z-0 flex flex-col items-center text-center select-none">
+              <div class="w-20 h-20 rounded-full bg-[#131B24] border-2 border-dashed border-[#F5BD41]/45 flex items-center justify-center text-[#F5BD41] mb-3 group-hover:scale-105 transition-transform">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0ZM12 14a7 7 0 0 0-7 7h14a7 7 0 0 0-7-7Z" />
+                </svg>
+              </div>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#05090D]/90 border border-white/10 text-[11px] font-medium text-[#A3ACB9] tracking-wide uppercase">
+                <svg class="w-3 h-3 text-[#F5BD41]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <path d="m21 15-5-5L5 21" />
+                </svg>
+                Portrait Image Placeholder
+              </span>
+            </div>
+            <div class="absolute top-3.5 left-3.5 z-20 bg-[#131B24] border border-white/15 text-[#D8DCE2] font-heading font-semibold text-[10.5px] tracking-[0.12em] uppercase px-3 py-1 rounded-full">
+              Field Execution &amp; QA/QC
+            </div>
+          </div>
+
+          <!-- Member Details -->
+          <div class="p-6 lg:p-7 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="block text-[#F5BD41] text-[11.5px] font-semibold tracking-[0.14em] uppercase mb-1">
+                Site Engineer
+              </span>
+              <h3 class="font-heading font-bold text-[20px] text-white mb-3">
+                Abdullahi Garba Musa
+              </h3>
+              <p class="text-[#9BA5B4] text-[13.5px] leading-[1.65]">
+                Oversees day-to-day site operations, trade coordination, material testing, and HSE safety compliance. Ensures strict adherence to engineering specifications, construction schedules, and workmanship quality from excavation to handover.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-white/[0.06] flex items-center justify-between text-[12px] text-[#8E98A8]">
+              <span>Site Supervision &amp; Safety</span>
+              <span class="text-[#F5BD41] font-semibold">Site Eng.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Summary Callout Card Completing the 3x2 Architectural Grid -->
+        <div class="bg-gradient-to-br from-[#111923] to-[#0A0F15] border border-[#F5BD41]/25 rounded-2xl p-6 lg:p-8 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-[#F5BD41]/15 border border-[#F5BD41]/30 flex items-center justify-center text-[#F5BD41] mb-6">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4" />
+              </svg>
+            </div>
+            <span class="block text-[#F5BD41] text-[11px] font-semibold tracking-[0.16em] uppercase mb-2">
+              INTEGRATED DELIVERY
+            </span>
+            <h3 class="font-heading font-bold text-[22px] leading-[1.25] text-white mb-3">
+              Multidisciplinary Synergy on Every Site
+            </h3>
+            <p class="text-[#A3ACB9] text-[13.5px] leading-[1.65]">
+              By uniting executive leadership, surveying, civil engineering, architecture, and dedicated site engineering under one roof, AGM PrimeBuild eliminates costly delays and guarantees structural excellence.
+            </p>
+          </div>
+          <div class="mt-6 pt-5 border-t border-white/10">
+            <button
+              type="button"
+              onclick="openQuoteModal('Technical Consultation')"
+              class="w-full inline-flex items-center justify-center gap-2 bg-[#F5BD41] hover:bg-[#FFD063] text-[#05090D] font-semibold text-[13.5px] px-5 py-3 rounded-full transition-all"
+            >
+              <span>Consult Our Technical Team</span>
+              <svg class="w-4 h-4 stroke-[2.2]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
+              </svg>
+            </button>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -1004,9 +1370,198 @@
   </section>
 
   <!-- =====================================================================
+       NEW SECTION — REGISTRATION & CORPORATE COMPLIANCE (CAC, FIRS, SCULM)
+  ====================================================================== -->
+  <section id="compliance" class="bg-[#05090D] py-16 lg:py-24 border-t border-white/[0.08]">
+    <div class="max-w-container mx-auto px-5 sm:px-8 lg:px-10">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 lg:mb-14">
+        <div>
+          <span class="block text-[#F5BD41] text-[11px] sm:text-[12px] font-semibold tracking-[0.16em] uppercase mb-2.5">
+            STATUTORY ACCREDITATION &amp; GOVERNANCE
+          </span>
+          <h2 class="font-heading font-bold text-[28px] sm:text-[34px] lg:text-[38px] leading-[1.18] text-white">
+            Registration &amp; Compliance
+          </h2>
+        </div>
+        <p class="text-[#A3ACB9] text-[14px] sm:text-[14.5px] leading-[1.65] lg:max-w-[450px] lg:pb-1">
+          AGM PrimeBuild Construction Ltd operates with full statutory legitimacy, regulatory transparency, and institutional compliance across the Federal Republic of Nigeria.
+        </p>
+      </div>
+
+      <!-- Three Compliance & Registration Cards (CAC, FIRS, SCULM) with Certificate/Seal Image Placeholders -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7">
+        
+        <!-- Registration 1: CAC -->
+        <article class="group bg-[#0C1117] hover:bg-[#101720] border border-white/[0.08] hover:border-[#F5BD41]/40 rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 shadow-lg">
+          <div>
+            <!-- Certificate / Official Seal Image Placeholder -->
+            <div class="relative aspect-[16/10] w-full bg-[#090E14] blueprint-placeholder-grid border-b border-white/[0.07] flex flex-col items-center justify-center p-6 overflow-hidden">
+              <img
+                src="compliance-cac-placeholder.jpg"
+                alt="CAC Certificate of Incorporation Placeholder"
+                class="absolute inset-0 w-full h-full object-contain p-4 z-10"
+                onerror="this.style.display='none';"
+              />
+              <!-- Placeholder Seal & Frame -->
+              <div class="relative z-0 flex flex-col items-center text-center select-none">
+                <div class="w-16 h-16 rounded-2xl bg-[#131B24] border-2 border-dashed border-[#F5BD41]/45 flex items-center justify-center text-[#F5BD41] mb-3 group-hover:scale-105 transition-transform">
+                  <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline stroke-linecap="round" stroke-linejoin="round" points="14 2 14 8 20 8" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m9 15 2 2 4-4" />
+                  </svg>
+                </div>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#05090D]/90 border border-white/10 text-[11px] font-medium text-[#A3ACB9] tracking-wide uppercase">
+                  CAC Certificate / Logo Placeholder
+                </span>
+              </div>
+              <!-- Status Pill -->
+              <div class="absolute top-3.5 right-3.5 z-20 inline-flex items-center gap-1.5 bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[11px] font-semibold px-2.5 py-1 rounded-full">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>Verified</span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6 lg:p-7">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="text-[#F5BD41] font-heading font-extrabold text-[13px] tracking-[0.14em] uppercase">
+                  CAC REGISTERED
+                </span>
+                <span class="text-[11.5px] text-[#8E98A8] font-medium">Companies &amp; Allied Matters Act</span>
+              </div>
+              <h3 class="font-heading font-bold text-[19px] text-white mb-2.5">
+                Corporate Affairs Commission (CAC)
+              </h3>
+              <p class="text-[#9BA5B4] text-[13.5px] leading-[1.65]">
+                Duly incorporated as a Limited Liability Construction Company in Nigeria under the Corporate Affairs Commission, authorized to execute civil engineering, building construction, and real estate contracting.
+              </p>
+            </div>
+          </div>
+
+          <div class="px-6 lg:px-7 pb-6 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[12px]">
+            <span class="text-[#8E98A8]">Status: <strong class="text-white font-medium">Active &amp; Incorporated</strong></span>
+            <span class="text-[#F5BD41] font-semibold">CAC Nigeria</span>
+          </div>
+        </article>
+
+        <!-- Registration 2: FIRS -->
+        <article class="group bg-[#0C1117] hover:bg-[#101720] border border-white/[0.08] hover:border-[#F5BD41]/40 rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 shadow-lg">
+          <div>
+            <!-- Certificate / Official Seal Image Placeholder -->
+            <div class="relative aspect-[16/10] w-full bg-[#090E14] blueprint-placeholder-grid border-b border-white/[0.07] flex flex-col items-center justify-center p-6 overflow-hidden">
+              <img
+                src="compliance-firs-placeholder.jpg"
+                alt="FIRS Tax Compliance Certificate Placeholder"
+                class="absolute inset-0 w-full h-full object-contain p-4 z-10"
+                onerror="this.style.display='none';"
+              />
+              <!-- Placeholder Seal & Frame -->
+              <div class="relative z-0 flex flex-col items-center text-center select-none">
+                <div class="w-16 h-16 rounded-2xl bg-[#131B24] border-2 border-dashed border-[#F5BD41]/45 flex items-center justify-center text-[#F5BD41] mb-3 group-hover:scale-105 transition-transform">
+                  <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4" />
+                  </svg>
+                </div>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#05090D]/90 border border-white/10 text-[11px] font-medium text-[#A3ACB9] tracking-wide uppercase">
+                  FIRS Certificate / Logo Placeholder
+                </span>
+              </div>
+              <!-- Status Pill -->
+              <div class="absolute top-3.5 right-3.5 z-20 inline-flex items-center gap-1.5 bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[11px] font-semibold px-2.5 py-1 rounded-full">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>Tax Compliant</span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6 lg:p-7">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="text-[#F5BD41] font-heading font-extrabold text-[13px] tracking-[0.14em] uppercase">
+                  FIRS COMPLIANT
+                </span>
+                <span class="text-[11.5px] text-[#8E98A8] font-medium">TIN &amp; Tax Clearance</span>
+              </div>
+              <h3 class="font-heading font-bold text-[19px] text-white mb-2.5">
+                Federal Inland Revenue Service (FIRS)
+              </h3>
+              <p class="text-[#9BA5B4] text-[13.5px] leading-[1.65]">
+                Registered with the Federal Inland Revenue Service with verified corporate Tax Identification Number (TIN) and up-to-date statutory tax compliance for public and private sector procurement.
+              </p>
+            </div>
+          </div>
+
+          <div class="px-6 lg:px-7 pb-6 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[12px]">
+            <span class="text-[#8E98A8]">Status: <strong class="text-white font-medium">Verified Tax Clearance</strong></span>
+            <span class="text-[#F5BD41] font-semibold">FIRS Nigeria</span>
+          </div>
+        </article>
+
+        <!-- Registration 3: SCULM -->
+        <article class="group bg-[#0C1117] hover:bg-[#101720] border border-white/[0.08] hover:border-[#F5BD41]/40 rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 shadow-lg">
+          <div>
+            <!-- Certificate / Official Seal Image Placeholder -->
+            <div class="relative aspect-[16/10] w-full bg-[#090E14] blueprint-placeholder-grid border-b border-white/[0.07] flex flex-col items-center justify-center p-6 overflow-hidden">
+              <img
+                src="compliance-sculm-placeholder.jpg"
+                alt="SCULM Regulatory Compliance Certificate Placeholder"
+                class="absolute inset-0 w-full h-full object-contain p-4 z-10"
+                onerror="this.style.display='none';"
+              />
+              <!-- Placeholder Seal & Frame -->
+              <div class="relative z-0 flex flex-col items-center text-center select-none">
+                <div class="w-16 h-16 rounded-2xl bg-[#131B24] border-2 border-dashed border-[#F5BD41]/45 flex items-center justify-center text-[#F5BD41] mb-3 group-hover:scale-105 transition-transform">
+                  <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <rect x="3" y="4" width="18" height="16" rx="2" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h6M7 16h4" />
+                    <circle cx="17" cy="15" r="2" />
+                  </svg>
+                </div>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#05090D]/90 border border-white/10 text-[11px] font-medium text-[#A3ACB9] tracking-wide uppercase">
+                  SCULM Certificate / Logo Placeholder
+                </span>
+              </div>
+              <!-- Status Pill -->
+              <div class="absolute top-3.5 right-3.5 z-20 inline-flex items-center gap-1.5 bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[11px] font-semibold px-2.5 py-1 rounded-full">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>Certified</span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6 lg:p-7">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="text-[#F5BD41] font-heading font-extrabold text-[13px] tracking-[0.14em] uppercase">
+                  SCULM CERTIFIED
+                </span>
+                <span class="text-[11.5px] text-[#8E98A8] font-medium">AML / CFT Regulatory Compliance</span>
+              </div>
+              <h3 class="font-heading font-bold text-[19px] text-white mb-2.5">
+                SCULM Statutory Registration
+              </h3>
+              <p class="text-[#9BA5B4] text-[13.5px] leading-[1.65]">
+                Fully accredited and certified under the Special Control Unit Against Money Laundering (SCULM / SCUML), upholding strict financial integrity, corporate transparency, and institutional contracting standards.
+              </p>
+            </div>
+          </div>
+
+          <div class="px-6 lg:px-7 pb-6 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[12px]">
+            <span class="text-[#8E98A8]">Status: <strong class="text-white font-medium">Certified &amp; Compliant</strong></span>
+            <span class="text-[#F5BD41] font-semibold">SCULM Nigeria</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
        SECTION 8 — TESTIMONIALS
   ====================================================================== -->
-  <section id="testimonials" class="bg-[#05090D] py-16 lg:py-24">
+  <section id="testimonials" class="bg-[#080D13] py-16 lg:py-24 border-t border-white/[0.06]">
     <div class="max-w-container mx-auto px-5 sm:px-8 lg:px-10">
       
       <!-- Heading + Circular Previous/Next Controls -->
@@ -1228,11 +1783,14 @@
           <div style="display: none;" class="items-center gap-2.5 select-none">
             <div class="relative w-10 h-10 flex items-center justify-center">
               <img
-              src="loogo.webp"
-              alt="AGM PrimeBuild Construction Ltd Official Logo"
-              class="h-11 sm:h-12 w-auto object-contain"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            />
+                src="loogo.webp"
+                alt="AGM PrimeBuild Construction Ltd Official Logo"
+                class="h-11 sm:h-12 w-auto object-contain"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div style="display: none;" class="w-9 h-9 rounded-lg bg-[#F5BD41]/15 border border-[#F5BD41]/40 items-center justify-center text-[#F5BD41] font-heading font-extrabold text-xs">
+                AGM
+              </div>
             </div>
             <div class="flex flex-col leading-none">
               <span class="text-[#F5BD41] font-heading font-extrabold text-lg tracking-tight">AGM</span>
@@ -1243,11 +1801,13 @@
         </a>
 
         <!-- Center: Footer Navigation Links -->
-        <ul class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-[13px] font-medium text-[#D8DCE2]">
+        <ul class="flex flex-wrap items-center justify-center gap-6 sm:gap-7 text-[13px] font-medium text-[#D8DCE2]">
           <li><a href="#home" class="hover:text-[#F5BD41] transition-colors">Home</a></li>
           <li><a href="#about" class="hover:text-[#F5BD41] transition-colors">About</a></li>
           <li><a href="#services" class="hover:text-[#F5BD41] transition-colors">Services</a></li>
           <li><a href="#projects" class="hover:text-[#F5BD41] transition-colors">Projects</a></li>
+          <li><a href="#team" class="hover:text-[#F5BD41] transition-colors">Team</a></li>
+          <li><a href="#compliance" class="hover:text-[#F5BD41] transition-colors">Compliance</a></li>
           <li><a href="#why-us" class="hover:text-[#F5BD41] transition-colors">Why Us</a></li>
           <li><a href="#contact" class="hover:text-[#F5BD41] transition-colors">Contact</a></li>
         </ul>
@@ -1319,9 +1879,102 @@
   </footer>
 
   <!-- =====================================================================
-       INTERACTIVE MODALS (QUOTE / CONSULTATION & PROJECT / SERVICE DETAILS)
+       INTERACTIVE MODALS
   ====================================================================== -->
-  <!-- Quote / Consultation Modal -->
+
+  <!-- 1. Project 3-Stage Gallery Modal (Before, Ongoing, After) -->
+  <div
+    id="project-gallery-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="project-gallery-title"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto"
+  >
+    <div class="bg-[#0C1117] border border-white/15 rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl relative my-auto">
+      <!-- Top Bar -->
+      <div class="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#080D13]">
+        <div>
+          <span id="project-gallery-location" class="block text-[#F5BD41] text-[11px] font-semibold tracking-[0.16em] uppercase">
+            BAUCHI, NIGERIA
+          </span>
+          <h3 id="project-gallery-title" class="font-heading font-bold text-xl sm:text-2xl text-white">
+            Residential House
+          </h3>
+        </div>
+        <button
+          type="button"
+          onclick="closeProjectGalleryModal()"
+          aria-label="Close project gallery"
+          class="w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 text-[#A3ACB9] hover:text-white flex items-center justify-center transition-colors"
+        >
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Main Stage Image Viewer -->
+      <div class="relative aspect-[16/9] w-full bg-[#05090D] overflow-hidden">
+        <img
+          id="project-active-image"
+          src=""
+          alt="Project Stage View"
+          class="w-full h-full object-cover transition-all duration-300"
+        />
+        <!-- Stage Badge Overlay -->
+        <div class="absolute top-4 left-4 flex items-center gap-2 bg-[#05090D]/90 backdrop-blur-md border border-[#F5BD41]/40 px-3.5 py-1.5 rounded-full shadow-lg">
+          <span class="w-2 h-2 rounded-full bg-[#F5BD41]"></span>
+          <span id="project-active-stage-badge" class="font-heading font-bold text-[11.5px] tracking-[0.12em] uppercase text-[#F5BD41]">
+            STAGE 1: BEFORE
+          </span>
+        </div>
+        <!-- Stage Caption Overlay at Bottom -->
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#05090D] via-[#05090D]/80 to-transparent pt-10 pb-4 px-6">
+          <p id="project-active-stage-caption" class="text-white text-[13.5px] sm:text-[14px] font-medium"></p>
+        </div>
+      </div>
+
+      <!-- Interactive List of 3 Stage Images (Before, Ongoing, After) -->
+      <div class="p-6 bg-[#0C1117]">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-[12px] font-semibold uppercase tracking-[0.12em] text-[#A3ACB9]">
+            Select Construction Phase to Render (Before • Ongoing • After)
+          </span>
+          <span id="project-stage-counter" class="text-[12px] font-semibold text-[#F5BD41]">
+            Phase 3 of 3
+          </span>
+        </div>
+
+        <!-- 3-Column Interactive Thumbnail Selector -->
+        <div id="project-thumbnails-grid" class="grid grid-cols-3 gap-3 sm:gap-4 mb-5">
+          <!-- Dynamically populated by JavaScript with Before, Ongoing, and After cards -->
+        </div>
+
+        <!-- Overall Project Description & CTA Row -->
+        <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <p id="project-gallery-desc" class="text-[#9BA5B4] text-[13.5px] leading-relaxed flex-1"></p>
+          <div class="flex items-center gap-3 flex-shrink-0">
+            <button
+              type="button"
+              onclick="closeProjectGalleryModal()"
+              class="px-4 py-2.5 rounded-full border border-white/15 text-[13px] text-[#D8DCE2] hover:text-white transition-colors"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              onclick="const title = document.getElementById('project-gallery-title').textContent; closeProjectGalleryModal(); openQuoteModal(title);"
+              class="px-5 py-2.5 rounded-full bg-[#F5BD41] hover:bg-[#FFD063] text-[#05090D] font-semibold text-[13px] transition-all"
+            >
+              Build Similar Project
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Quote / Consultation Modal -->
   <div
     id="quote-modal"
     role="dialog"
@@ -1412,7 +2065,7 @@
     </div>
   </div>
 
-  <!-- Info / Detail Modal (Used for Service & Project Previews and Status Messages) -->
+  <!-- 3. Info / Detail Modal (Used for Service Previews and Status Messages) -->
   <div
     id="info-modal"
     role="dialog"
@@ -1467,7 +2120,7 @@
      */
     const SITE_CONFIG = {
       companyName: "AGM PrimeBuild Construction Ltd",
-      illustrativePhoneDisplay: "+234 812 413 1436", // Illustrative placeholder per specification
+      illustrativePhoneDisplay: "+234 812 413 1436",
       illustrativePhoneHref: "tel:+2348124131436",
       socialProfiles: {
         Facebook: "",
@@ -1476,6 +2129,128 @@
         X: ""
       }
     };
+
+    /**
+     * Structured 3-Stage Project Repository (Before, Ongoing, After)
+     * Clicking on any project card opens the interactive 3-image stage viewer.
+     */
+    const PROJECTS_DATA = {
+      'residential-house': {
+        title: 'Residential House',
+        location: 'Bauchi, Nigeria',
+        description: 'A bespoke 5-bedroom luxury contemporary residence featuring cantilevered balconies, floor-to-ceiling glazing, and integrated smart-home automation.',
+        stages: [
+          {
+            key: 'before',
+            label: 'Before',
+            badge: 'STAGE 1 • BEFORE (SITE CLEARING & FOUNDATION)',
+            caption: 'Initial site survey, boundary setting-out, and trench excavation in Bauchi prior to substructure works.',
+            image: 'https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=1200&q=80'
+          },
+          {
+            key: 'ongoing',
+            label: 'Ongoing',
+            badge: 'STAGE 2 • ONGOING (STRUCTURAL FRAMING)',
+            caption: 'Reinforced concrete columns, cantilevered first-floor slab casting, and blockwork superstructure underway.',
+            image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80'
+          },
+          {
+            key: 'after',
+            label: 'After (Final Result)',
+            badge: 'STAGE 3 • AFTER (COMPLETED RESIDENCE)',
+            caption: 'Final completed luxury residence with architectural exterior lighting, glazing, and landscaped grounds.',
+            image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80'
+          }
+        ]
+      },
+      'office-complex': {
+        title: 'Office Complex',
+        location: 'Abuja, Nigeria',
+        description: 'Modern multi-story commercial office complex designed with energy-efficient curtain walls, open-plan executive suites, and landscaped courtyards.',
+        stages: [
+          {
+            key: 'before',
+            label: 'Before',
+            badge: 'STAGE 1 • BEFORE (GEOTECHNICAL & PILING)',
+            caption: 'Site preparation, soil stabilization, and deep raft foundation reinforcement in Abuja.',
+            image: 'https://images.unsplash.com/photo-1541888946425-d81bb18086f6?auto=format&fit=crop&w=1200&q=80'
+          },
+          {
+            key: 'ongoing',
+            label: 'Ongoing',
+            badge: 'STAGE 2 • ONGOING (MULTI-STORY CORE & STEELWORK)',
+            caption: 'Multi-level structural frame erection and facade curtain-wall grid installation.',
+            image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80'
+          },
+          {
+            key: 'after',
+            label: 'After (Final Result)',
+            badge: 'STAGE 3 • AFTER (COMPLETED OFFICE COMPLEX)',
+            caption: 'Completed corporate headquarters featuring double-glazed curtain walls and executive finishings.',
+            image: 'https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=1200&q=80'
+          }
+        ]
+      },
+      'luxury-apartments': {
+        title: 'Luxury Apartments',
+        location: 'Kaduna, Nigeria',
+        description: 'Contemporary multi-unit residential apartments combining warm timber accents, private recessed terraces, and dedicated underground parking.',
+        stages: [
+          {
+            key: 'before',
+            label: 'Before',
+            badge: 'STAGE 1 • BEFORE (EARTHWORKS & SUBSTRUCTURE)',
+            caption: 'Cleared development plot in Kaduna with foundation footing layout and underground drainage channels.',
+            image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80'
+          },
+          {
+            key: 'ongoing',
+            label: 'Ongoing',
+            badge: 'STAGE 2 • ONGOING (SUPERSTRUCTURE & PLASTERING)',
+            caption: 'Multi-floor blockwork, recessed balcony framing, and exterior rendering in progress.',
+            image: 'https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=1200&q=80'
+          },
+          {
+            key: 'after',
+            label: 'After (Final Result)',
+            badge: 'STAGE 3 • AFTER (COMPLETED APARTMENTS)',
+            caption: 'Handed-over luxury apartment block with composite cladding, glass balustrades, and paved parking.',
+            image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80'
+          }
+        ]
+      },
+      'retail-store': {
+        title: 'Retail Store',
+        location: 'Jos, Nigeria',
+        description: 'Flagship commercial retail plaza featuring double-height display storefronts, warm architectural LED perimeter lighting, and generous customer walkways.',
+        stages: [
+          {
+            key: 'before',
+            label: 'Before',
+            badge: 'STAGE 1 • BEFORE (SITE PREPARATION)',
+            caption: 'Initial commercial site grading and foundation pad excavation in Jos.',
+            image: 'https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?auto=format&fit=crop&w=1200&q=80'
+          },
+          {
+            key: 'ongoing',
+            label: 'Ongoing',
+            badge: 'STAGE 2 • ONGOING (STRUCTURAL & MEP WORKS)',
+            caption: 'Structural portal framing, roof truss installation, and electrical conduit rough-in.',
+            image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1200&q=80'
+          },
+          {
+            key: 'after',
+            label: 'After (Final Result)',
+            badge: 'STAGE 3 • AFTER (FINAL COMPLETED PLAZA)',
+            caption: 'Completed modern retail storefront with expansive glass bays and architectural night illumination.',
+            image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80'
+          }
+        ]
+      }
+    };
+
+    let currentProjectId = null;
+    let currentStageIndex = 0;
 
     // Initialize dynamic phone placeholder from SITE_CONFIG
     const phoneDisplayEl = document.getElementById('cta-phone-display');
@@ -1523,7 +2298,6 @@
         if (track.scrollWidth > track.clientWidth) {
           track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
         } else {
-          // On desktop where all 4 cards fit in one row, cycle the last item to the front for tactile feedback
           const lastCard = track.lastElementChild;
           if (lastCard) {
             track.insertBefore(lastCard, track.firstElementChild);
@@ -1536,7 +2310,6 @@
         if (track.scrollWidth > track.clientWidth) {
           track.scrollBy({ left: cardWidth, behavior: 'smooth' });
         } else {
-          // On desktop where all cards fit in one row, cycle the first item to the end
           const firstCard = track.firstElementChild;
           if (firstCard) {
             track.appendChild(firstCard);
@@ -1548,7 +2321,86 @@
     setupCarousel('projects-track', 'projects-prev', 'projects-next');
     setupCarousel('testimonials-track', 'testimonials-prev', 'testimonials-next');
 
-    // Modal Interactions
+    // Interactive 3-Stage Project Gallery Modal Functions
+    const projectGalleryModal = document.getElementById('project-gallery-modal');
+
+    function openProjectGalleryModal(projectId) {
+      const project = PROJECTS_DATA[projectId];
+      if (!project) return;
+
+      currentProjectId = projectId;
+      currentStageIndex = 0; // Start at Stage 1 (Before) or click any of the 3 images to render
+
+      document.getElementById('project-gallery-location').textContent = project.location.toUpperCase();
+      document.getElementById('project-gallery-title').textContent = project.title;
+      document.getElementById('project-gallery-desc').textContent = project.description;
+
+      renderProjectStage(0);
+
+      projectGalleryModal.classList.remove('hidden');
+      projectGalleryModal.classList.add('flex');
+    }
+
+    function renderProjectStage(stageIdx) {
+      const project = PROJECTS_DATA[currentProjectId];
+      if (!project || !project.stages[stageIdx]) return;
+
+      currentStageIndex = stageIdx;
+      const activeStage = project.stages[stageIdx];
+
+      const mainImg = document.getElementById('project-active-image');
+      mainImg.src = activeStage.image;
+      mainImg.alt = `${project.title} - ${activeStage.label}`;
+
+      document.getElementById('project-active-stage-badge').textContent = activeStage.badge;
+      document.getElementById('project-active-stage-caption').textContent = activeStage.caption;
+      document.getElementById('project-stage-counter').textContent = `Phase ${stageIdx + 1} of ${project.stages.length} (${activeStage.label})`;
+
+      // Render the 3 interactive stage cards (Before, Ongoing, After)
+      const thumbnailsGrid = document.getElementById('project-thumbnails-grid');
+      thumbnailsGrid.innerHTML = project.stages.map((stage, idx) => {
+        const isActive = idx === stageIdx;
+        return `
+          <button
+            type="button"
+            onclick="renderProjectStage(${idx})"
+            class="group text-left rounded-xl overflow-hidden border transition-all duration-200 focus:outline-none ${
+              isActive
+                ? 'border-[#F5BD41] ring-2 ring-[#F5BD41]/40 bg-[#131B24]'
+                : 'border-white/10 hover:border-white/30 bg-[#080D13] opacity-75 hover:opacity-100'
+            }"
+          >
+            <div class="relative aspect-[16/10] w-full overflow-hidden bg-[#05090D]">
+              <img
+                src="${stage.image}"
+                alt="${stage.label}"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div class="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-heading font-bold uppercase tracking-wider ${
+                isActive ? 'bg-[#F5BD41] text-[#05090D]' : 'bg-black/75 text-white'
+              }">
+                0${idx + 1}. ${stage.label}
+              </div>
+            </div>
+            <div class="p-2.5">
+              <div class="font-heading font-bold text-[12.5px] ${isActive ? 'text-[#F5BD41]' : 'text-white'}">
+                ${stage.label}
+              </div>
+              <div class="text-[11px] text-[#9BA5B4] truncate">
+                Click to view ${stage.label.toLowerCase()} photo
+              </div>
+            </div>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function closeProjectGalleryModal() {
+      projectGalleryModal.classList.add('hidden');
+      projectGalleryModal.classList.remove('flex');
+    }
+
+    // Quote & Info Modal Interactions
     const quoteModal = document.getElementById('quote-modal');
     const infoModal = document.getElementById('info-modal');
 
@@ -1575,18 +2427,6 @@
       const imgEl = document.getElementById('info-modal-img');
       imgEl.classList.add('hidden');
       document.getElementById('info-modal-eyebrow').textContent = 'OUR SERVICES';
-      document.getElementById('info-modal-title').textContent = title;
-      document.getElementById('info-modal-desc').textContent = description;
-      infoModal.classList.remove('hidden');
-      infoModal.classList.add('flex');
-    }
-
-    function openProjectModal(title, location, imageUrl, description) {
-      const imgEl = document.getElementById('info-modal-img');
-      imgEl.src = imageUrl;
-      imgEl.alt = title + ' - ' + location;
-      imgEl.classList.remove('hidden');
-      document.getElementById('info-modal-eyebrow').textContent = location.toUpperCase();
       document.getElementById('info-modal-title').textContent = title;
       document.getElementById('info-modal-desc').textContent = description;
       infoModal.classList.remove('hidden');
@@ -1624,9 +2464,14 @@
     // Close modals on Escape key or backdrop click
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
+        closeProjectGalleryModal();
         closeQuoteModal();
         closeInfoModal();
       }
+    });
+
+    projectGalleryModal.addEventListener('click', (e) => {
+      if (e.target === projectGalleryModal) closeProjectGalleryModal();
     });
 
     quoteModal.addEventListener('click', (e) => {
